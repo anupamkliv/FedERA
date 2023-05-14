@@ -1,0 +1,127 @@
+{
+    "MNIST":{
+        "server": {
+            "algorithm":"fedavg",
+            "num_of_clients":1,
+            "fraction_of_clients":1,
+            "num_of_rounds":1,
+            "initial_model_path":"initial_model.pt",
+            "epochs":1,
+            "accept_conn_after_FL_begin":0 ,
+            "verify": 0,
+            "verification_threshold": 0,
+            "timeout": null,
+            "resize_size": 32,
+            "batch_size": 32,
+            "net": "LeNet",
+            "dataset": "MNIST",
+            "device": "cpu",
+            "niid": 2,
+            "carbon": 0
+        },
+        "client": {
+            "ip_address": "localhost:8214",
+            "device":"cpu"
+        }
+    },
+    "FashionMNIST":{
+        "server": {
+            "algorithm":"fedavg",
+            "num_of_clients":1,
+            "fraction_of_clients":1,
+            "num_of_rounds":1,
+            "initial_model_path":"initial_model.pt",
+            "epochs":1,
+            "accept_conn_after_FL_begin":0 ,
+            "verify": 0,
+            "verification_threshold": 0,
+            "timeout": null,
+            "resize_size": 32,
+            "batch_size": 32,
+            "net": "LeNet",
+            "dataset": "MNIST",
+            "device": "cpu",
+            "niid": 2,
+            "carbon": 0
+        },
+        "client": {
+            "ip_address": "localhost:8214",
+            "device":"cpu"
+        }
+    },
+    "CIFAR10":{
+        "server":{
+            "algorithm":"fedavg",
+            "num_of_clients":1,
+            "fraction_of_clients":1,
+            "num_of_rounds":1,
+            "initial_model_path":"initial_model.pt",
+            "epochs":1,
+            "accept_conn_after_FL_begin":0 ,
+            "verify": 0,
+            "verification_threshold": 0,
+            "timeout": null,
+            "resize_size": 32,
+            "batch_size": 32,
+            "net": "resnet18",
+            "dataset": "CIFAR10",
+            "device": "cpu",
+            "niid": 2,
+            "carbon": 0
+        },
+        "client":{
+            "ip_address": "localhost:8214",
+            "device":"cpu"
+        }
+    },
+    "CIFAR100":{
+        "server":{
+            "algorithm":"fedavg",
+            "num_of_clients":1,
+            "fraction_of_clients":1,
+            "num_of_rounds":1,
+            "initial_model_path":"initial_model.pt",
+            "epochs":1,
+            "accept_conn_after_FL_begin":0 ,
+            "verify": 0,
+            "verification_threshold": 0,
+            "timeout": null,
+            "resize_size": 32,
+            "batch_size": 32,
+            "net": "resnet18",
+            "dataset": "CIFAR100",
+            "device": "cpu",
+            "niid": 2,
+            "carbon": 0
+        },
+        "client":{
+            "ip_address": "localhost:8214",
+            "device":"cpu"
+        }
+    },
+    "CUSTOM":{
+        "server":{
+            "algorithm":"fedavg",
+            "num_of_clients":1,
+            "fraction_of_clients":1,
+            "num_of_rounds":1,
+            "initial_model_path":"initial_model.pt",
+            "epochs":1,
+            "accept_conn_after_FL_begin":0 ,
+            "verify": 0,
+            "verification_threshold": 0,
+            "timeout": null,
+            "resize_size": 32,
+            "batch_size": 32,
+            "net": "LeNet",
+            "dataset": "CUSTOM",
+            "device": "cpu",
+            "niid": 2,
+            "carbon": 0
+        },
+        "client":{
+            "ip_address": "localhost:8214",
+            "device":"cpu"
+        }
+    }
+}
