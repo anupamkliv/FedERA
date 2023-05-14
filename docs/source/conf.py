@@ -32,7 +32,7 @@ autoclass_content = 'both'
 templates_path = ['_templates']
 # configuration for 'autoapi.extension'
 autoapi_type = 'python'
-autoapi_dirs = ['../..']
+autoapi_dirs = ['../../federa']
 autoapi_template_dir = '_autoapi_temp'
 add_module_names = False  # makes Sphinx render package.module.Class as Class
 
