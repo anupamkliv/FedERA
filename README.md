@@ -33,13 +33,13 @@ $ pip install federa
 
 ## Documentation
 
-Website documentation has been made availbale for `FedERA`. Please visit [Feder Documentation](https://feder.readthedocs.io/en/latest/index.html) for more details.
+Website documentation has been made availbale for `FedERA`. Please visit [Feder Documentation](https://federa.readthedocs.io/en/latest/index.html) for more details.
 
-1. [Overview](https://feder.readthedocs.io/en/latest/overview.html)
-2. [Installation](https://feder.readthedocs.io/en/latest/installation.html)
-3. [Tutorials](https://feder.readthedocs.io/en/latest/tutorials.html)
-4. [Contribution](https://feder.readthedocs.io/en/latest/contribution.html)
-5. [API Reference](https://feder.readthedocs.io/en/latest/api.html)
+1. [Overview](https://federa.readthedocs.io/en/latest/overview.html)
+2. [Installation](https://federa.readthedocs.io/en/latest/installation.html)
+3. [Tutorials](https://federa.readthedocs.io/en/latest/tutorials.html)
+4. [Contribution](https://federa.readthedocs.io/en/latest/contribution.html)
+5. [API Reference](https://federa.readthedocs.io/en/latest/api.html)
 
 ## Starting server
 
@@ -135,10 +135,10 @@ Files architecture of `FedERA`. These contents may be helpful for users to under
 
 ## The framework will be composed of 4 modules, each module building upon the last:
 
-* **Module 1: Verification module** [docs](https://feder.readthedocs.io/en/latest/overview.html#verification-module)
-* **Module 2: Timeout module** [docs](https://feder.readthedocs.io/en/latest/overview.html#timeout-module)
-* **Module 3: Intermediate client connections module** [docs](https://feder.readthedocs.io/en/latest/overview.html#intermediate-client-connections-module)
-* **Module 4: Carbon emission tracking module** [docs](https://feder.readthedocs.io/en/latest/overview.html#carbon-emissions-tracking-module)
+* **Module 1: Verification module** [docs](https://federa.readthedocs.io/en/latest/overview.html#verification-module)
+* **Module 2: Timeout module** [docs](https://federa.readthedocs.io/en/latest/overview.html#timeout-module)
+* **Module 3: Intermediate client connections module** [docs](https://federa.readthedocs.io/en/latest/overview.html#intermediate-client-connections-module)
+* **Module 4: Carbon emission tracking module** [docs](https://federa.readthedocs.io/en/latest/overview.html#carbon-emissions-tracking-module)
 
 ## Running tests
 
@@ -222,7 +222,7 @@ Each client has same number of samples, and same distribution for all class samp
 
 ### Custom Dataset Support
 
-We also provide a simple way to add your own dataset to the framework. Look into [docs](https://feder.readthedocs.io/en/latest/tutorials/dataset.html#adding-support-for-new-datasets) for more details.
+We also provide a simple way to add your own dataset to the framework. Look into [docs](https://federa.readthedocs.io/en/latest/tutorials/dataset.html#adding-support-for-new-datasets) for more details.
 
 ## Models Supported
 
@@ -236,7 +236,7 @@ We also provide a simple way to add your own dataset to the framework. Look into
 
 ### Custom Model Support
 
-We also provide a simple way to add your own models to the framework. Look into [docs](https://feder.readthedocs.io/en/latest/tutorials/dataset.html#adding-support-for-new-datasets) for more details.
+We also provide a simple way to add your own models to the framework. Look into [docs](https://federa.readthedocs.io/en/latest/tutorials/dataset.html#adding-support-for-new-datasets) for more details.
 
 ## Carbon emission tracking
 
