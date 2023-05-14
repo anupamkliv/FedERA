@@ -1,0 +1,46 @@
+name: Windows (latest)
+
+on: [push]
+
+permissions:
+  contents: read
+
+
+jobs:
+  
+  interactive-kvasir: # from interactive-kvasir.yml
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.8"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Interactive API - pytorch_kvasir_unet
+      run: |
+        pip install torch==1.13.1
+        pip install torchvision==0.14.1
+        cd test
+        python test_algorithms.py
+  
+  cli: # from taskrunner.yml
+    needs: [interactive-kvasir]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.8"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Test TaskRunner API
+        run: |
+          cd test
+          python test_algorithms.py
