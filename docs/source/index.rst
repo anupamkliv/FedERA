@@ -1,7 +1,7 @@
 FedERA
 ===================================
 
-FedRA is a highly dynamic and customizable framework that can accommodate many use cases with flexibility by implementing several functionalities over different federated learning algorithms, and essentially creating a plug-and-play architecture to accommodate different use cases.
+FedERA is a highly dynamic and customizable framework that can accommodate many use cases with flexibility by implementing several functionalities over different federated learning algorithms, and essentially creating a plug-and-play architecture to accommodate different use cases.
 
 Check out the :doc:`overview` section for further information, including
 how to :ref:`installation` the project.
@@ -25,7 +25,7 @@ Contents
 Citation
 ........
 
-Please cite **FedLab** in your publications if it helps your research:
+Please cite **FedERA** in your publications if it helps your research:
 
 .. code:: latex
     
@@ -37,6 +37,5 @@ Contacts
 
 Contact the **FedERA** development team through Github issues or email:
 
-- efgh: efgh@gmail.com
+- Development Team: federa.team@gmail.com
 
-- abcd: abcd@gmail.com
