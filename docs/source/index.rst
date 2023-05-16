@@ -1,7 +1,7 @@
 FedERA
 ===================================
 
-FedERA is a highly dynamic and customizable framework that can accommodate many use cases with flexibility by implementing several functionalities over different federated learning algorithms, and essentially creating a plug-and-play architecture to accommodate different use cases.
+**FedERA** is a highly dynamic and customizable framework that can accommodate many use cases with flexibility by implementing several functionalities over different federated learning algorithms, and essentially creating a plug-and-play architecture to accommodate different use cases.
 
 Check out the :doc:`overview` section for further information, including
 how to :ref:`installation` the project.

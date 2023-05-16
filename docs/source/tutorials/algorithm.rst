@@ -6,7 +6,7 @@ Federated Learning Algorithms
 
 The implementation of federated learning algorithms in Feder consists of two components: the training part on the client side and the aggregation part on the server side. The training functions are coded in the net_lib.py file at client/src directory, while the aggregation functions are located in various files within the algorithms folder at server/src directory.
 
-The algorithms currently implemented in **Feder** are:
+The algorithms currently implemented in **FedERA** are:
 
 * FedAvg
 * FedDyn
@@ -18,10 +18,10 @@ The algorithms currently implemented in **Feder** are:
 * Mimelite
 * FedYogi
 
-Adding a new algorithm to **Feder**
+Adding a new algorithm to **FedERA**
 -----------------------------------
 
-To add a new algorithm to **Feder**, you need to implement the training function on the client side and the aggregation function on the server side. The training function should be implemented in the net_lib.py file at client/src directory. The aggregation function should be implemented in a new file in the algorithms folder at server/src directory.
+To add a new algorithm to **FedERA**, you need to implement the training function on the client side and the aggregation function on the server side. The training function should be implemented in the net_lib.py file at client/src directory. The aggregation function should be implemented in a new file in the algorithms folder at server/src directory.
 
 Implementing the training function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
