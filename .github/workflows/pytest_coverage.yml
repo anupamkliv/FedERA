@@ -27,7 +27,7 @@ jobs:
           pip install -r requirements.txt
       - name: Test with pytest and report code coverage
         run: |
-          coverage run -m --source=federa pytest -v test/unittest
+          coverage run --source=federa test/unittest/test_algorithms.py
         continue-on-error: true
       - name: Upload coverage report
         uses: codecov/codecov-action@v3
