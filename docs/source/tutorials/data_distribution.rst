@@ -4,7 +4,7 @@
 Data Distribution
 *****************
 
-Feder allows the option to train with either IID or non-IID data distribution. To specify the data distribution, you can use the "--iid" flag. When the flag is set to "1", the data distribution is IID. However, if you set it to a value between "2-5", the data distribution will be non-IID. Each argument value corresponds to a different non-IID distribution. The non-IID distributions are defined as follows:
+**FedERA** allows the option to train with either IID or non-IID data distribution. To specify the data distribution, you can use the "--iid" flag. When the flag is set to "1", the data distribution is IID. However, if you set it to a value between "2-5", the data distribution will be non-IID. Each argument value corresponds to a different non-IID distribution. The non-IID distributions are defined as follows:
 
 .. code:: Python
 

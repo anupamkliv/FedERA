@@ -3,7 +3,8 @@
 Installation 
 ============
 
-To use Feder, first install it from source or using pip:
+To use **FedERA**, first install it from source:
+.. To use **FedERA**, first install it from source or using pip:
 
 Source Code
 ^^^^^^^^^^^
@@ -21,11 +22,11 @@ Install dependencies:
 
    $ pip install -r requirements.txt
 
-Pip
-^^^
+.. Pip
+.. ^^^
 
-Install **stable version** with pip:
+.. Install **stable version** with pip:
 
-.. code-block:: shell-session
+.. .. code-block:: shell-session
 
-   $ pip install feder==$version$
+..    $ pip install feder==$version$
