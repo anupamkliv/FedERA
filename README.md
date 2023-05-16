@@ -20,16 +20,16 @@ With `FedERA`, it is possible to operate the server and clients on **separate de
 
 - Install the latest version from source code:
 ```
-$ git clone git@github.com:federa.git
+$ git clone https://github.com/anupamkliv/FedERA.git
 $ cd FedERA
 $ pip install -r requirements.txt
 ```
 
-- Install the stable version (old version) via pip:
+<!-- - Install the stable version (old version) via pip:
 ```
 # assign the version federa==1.1.2
 $ pip install federa
-```
+``` -->
 
 ## Documentation
 
@@ -57,8 +57,9 @@ python -m federa.server.start_server \
 ## Starting client
 
 ```
-cd client
-python client.py
+python -m federa.client.start_client \
+ --ip localhost:8214 \
+ --device cpu \
 ```
 
 ## Arguments to the clients and server
@@ -95,31 +96,33 @@ python client.py
 Files architecture of `FedERA`. These contents may be helpful for users to understand our repo.
 
 ```
-├── client
-│   ├── src
-|   |   ├── client_lib
-|   |   ├── client
-|   |   ├── ClientConnection_pb2_grpc
-|   |   ├── ClientConnection_pb2
-|   |   ├── data_utils
-|   |   ├── distribution
-|   |   ├── get_data
-|   |   ├── net_lib
-|   |   ├── net
-│   └── start_client
-├── server
-│   ├── src
-|   |   ├── algorithms
-|   |   ├── server_evaluate
-|   |   ├── client_connection_servicer
-|   |   ├── client_manager
-|   |   ├── client_wrapper
-|   |   ├── ClientConnection_pb2_grpc
-|   |   ├── ClientConnection_pb2
-|   |   ├── server_lib
-|   |   ├── server
-|   |   ├── verification
-│   └── start_server
+FedERA
+├── federa
+│   ├── client
+│   │   ├── src
+│   |   |   ├── client_lib
+│   |   |   ├── client
+│   |   |   ├── ClientConnection_pb2_grpc
+│   |   |   ├── ClientConnection_pb2
+│   |   |   ├── data_utils
+│   |   |   ├── distribution
+│   |   |   ├── get_data
+│   |   |   ├── net_lib
+│   |   |   ├── net
+│   │   └── start_client
+│   └── server
+│       ├── src
+│       |   ├── algorithms
+│       |   ├── server_evaluate
+│       |   ├── client_connection_servicer
+│       |   ├── client_manager
+│       |   ├── client_wrapper
+│       |   ├── ClientConnection_pb2_grpc
+│       |   ├── ClientConnection_pb2
+│       |   ├── server_lib
+│       |   ├── server
+│       |   ├── verification
+│       └── start_server
 ├── test
 |   ├── misc
 │   ├── test_algorithms
