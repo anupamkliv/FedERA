@@ -1,4 +1,4 @@
-# Contributing to FEDEra
+# Contributing to FedEra
 
 We welcome contributions from the community. We believe that anyone can bring something valuable to FedERA and help us to improve the project. This document explains how to contribute to FedERA. 
 
