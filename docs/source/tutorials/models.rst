@@ -17,7 +17,7 @@ The `server_lib.py` file contains the implementation of Deep-Learning models for
 Adding support for a new model
 ------------------------------
 
-There are two ways to incorporate support for new models in **Feder**. One involves creating a new class that inherits from torch.nn.module and the other involves importing a model from torchvision.models. The first method is more flexible and allows for more customization, while the second method is easier to implement and is recommended for beginners.
+There are two ways to incorporate support for new models in **FedERA**. One involves creating a new class that inherits from torch.nn.module and the other involves importing a model from torchvision.models. The first method is more flexible and allows for more customization, while the second method is easier to implement and is recommended for beginners.
 
 Adding support for a new model by inheriting from torch.nn.module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
