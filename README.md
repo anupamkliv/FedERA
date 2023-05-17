@@ -434,6 +434,12 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
   <img width="40%" alt="" src="media/accuracy/Accuracy.png" >
 </div>
 
+##Support 
+
+We also always welcome questions, issue reports, and suggestions via:
+
+* [GitHub Issues](https://github.com/akshatbhandari15/FedERA/issues)
+
 ## References
 
 <a id="1">[1]</a> Schmidt, V., Goyal, K., Joshi, A., Feld, B., Conell, L., Laskaris, N., Blank, D., Wilson, J., Friedler, S., & Luccioni, S. (2021). CodeCarbon: Estimate and Track Carbon Emissions from Machine Learning Computing. https://doi.org/10.5281/zenodo.4658424
