@@ -1,6 +1,6 @@
 # Contributing to FEDEra
 
-We welcome contributions from the community. We believe that anyone can bring something valuable to OpenFL and help us to improve the project. This document explains how to contribute to OpenFL. 
+We welcome contributions from the community. We believe that anyone can bring something valuable to OpenFL and help us to improve the project. This document explains how to contribute to FedERA. 
 
 We accept various contributions from documentation improvement and bug fixing to major features proposals and [roadmap](https://github.com/intel/openfl/blob/develop/ROADMAP.md) suggestions.
 
