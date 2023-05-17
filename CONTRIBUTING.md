@@ -27,11 +27,11 @@ We use [flake8](https://flake8.pycqa.org/en/latest/) for PEP8 style guide enforc
 
 ### Formatting of Pull Requests
 
-OpenFL follows standard recommendations of PR formatting. Please find more details [here](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/).
+FedERA follows standard recommendations of PR formatting. Please find more details [here](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/).
 
 ### Continuous Integration and Continuous Development
 
-OpenFL uses GitHub actions to perform all functional and unit tests. Before your contribution can be merged make sure that all your tests are passing. 
+FedERA uses GitHub actions to perform all functional and unit tests. Before your contribution can be merged make sure that all your tests are passing. 
 For more information of what fails you can click on the “details” link near the pipeline that failed.
 
 ![CI/CD](docs/images/CI_details.png)
@@ -43,7 +43,7 @@ The [Tests/ folder](https://github.com/akshatbhandari15/FedERA/tree/main/test) c
 
 ### License
 
-OpenFL is licensed under the terms in [Apache 2.0 license](https://github.com/akshatbhandari15/FedERA/blob/main/LICENSE). By contributing to the project, you agree to the license and copyright terms therein and release your contribution under these terms.
+FedERA is licensed under the terms in [Apache 2.0 license](https://github.com/akshatbhandari15/FedERA/blob/main/LICENSE). By contributing to the project, you agree to the license and copyright terms therein and release your contribution under these terms.
 
 ### Sign your work
 
