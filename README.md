@@ -136,7 +136,7 @@ FedERA
     └── ...
 ```
 
-## The framework will be composed of 4 modules, each module building upon the last:
+## The framework is be composed of 4 modules, each module building upon the last:
 
 * **Module 1: Verification module** [docs](https://federa.readthedocs.io/en/latest/overview.html#verification-module)
 * **Module 2: Timeout module** [docs](https://federa.readthedocs.io/en/latest/overview.html#timeout-module)
@@ -444,6 +444,6 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
 
 Project Investigator: [Prof. ](https://scholar.google.com/citations?user=gF0H9nEAAAAJ&hl=ennjujbj) (abc@edu).
 
-For technical issues related to __Feder__ development, please contact our development team through Github issues or email:
+For technical issues related to __**FedERA**__ development, please contact our development team through Github issues or email:
 
 - [Name Sirname](https://scholar.google.com/citations___): _____@gmail.com
