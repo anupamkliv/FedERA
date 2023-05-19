@@ -1,29 +1,44 @@
 # Contributing to FedEra
 
-We welcome contributions from the community. We believe that anyone can bring something valuable to FedERA and help us to improve the project. This document explains how to contribute to FedERA. 
+Thank you for investing your time in contributing to our project. This document explains how to contribute to FedERA. 
 
 We accept various contributions from documentation improvement and bug fixing to major features proposals.
 
-Documentation improvement: review our [documentation](https://federa.readthedocs.io/en/latest/installation.html) and let us know if something is not clear or not relevant. 
-Propose your own formulations or even write new section explaining something that you know how works, but do not see in the documentation. 
-Propose it through GitHub [issues](https://github.com/akshatbhandari15/FedERA/issues/new/choose) or [Discussions](https://github.com/akshatbhandari15/FedERA/discussions).
-
 To propose bugs, new features, or other code improvements:
 
-1.	Check open and closed [issues](https://github.com/akshatbhandari15/FedERA/issues) and make sure there is no similar proposal.
-2.	Open a [new issue](https://github.com/akshatbhandari15/FedERA/issues/new/choose), select a relevant category (Bug report / Feature request / Report a security vulnerability) and describe your idea using the template. 
-3.	If you want to fix a bug or create this feature by yourself, prepare a contribution.
-	-	Format your code following the [flake8 style](https://flake8.pycqa.org/en/latest/).
-	-	Make sure that your code is original and corresponds to [OpenFL license](#license).
-	-	Sing your work - [see below](#sign-your-work). 
-	-	Create a [pull request](#formatting-of-pull-requests) and wait for feedback.
-	-	Verify that all tests in our [CI/CD pipeline](#Continuous-Integration-and-Continuous-Development) passed.
-4.	Hurrah! You are a new contributor to FedERA! You will see your name in released notes of the subsequent releases!😊
+1. Familiarize Yourself with the Project:
+Read the documentation, explore the codebase, and understand the overall architecture and goals of FedERA. Familiarize yourself with any existing guidelines and contributing documentation.
 
+2. Choose a Contribution Type:
+Determine the type of contribution you would like to make. It could be fixing a bug, implementing a new feature, improving documentation, optimizing performance, or any other valuable contribution.
 
-### Code format and style
+3. Create an Issue (Optional):
+If you're working on a bug fix or a specific feature, consider creating an issue in the issue tracker. Describe the problem or feature request clearly, provide context and any relevant information, and assign appropriate labels or tags. This allows others to provide feedback and track the progress of your contribution.
 
-We use [flake8](https://flake8.pycqa.org/en/latest/) for PEP8 style guide enforcement. This is run as a part of our CI/CD pipeline and it’s required prior a merge. 
+4. Fork the Repository:
+Fork the main repository to your own GitHub account. This creates a copy of the project that you can freely modify.
+
+5. Create a New Branch:
+Create a new branch in your forked repository. Give it a descriptive and meaningful name that reflects the purpose of your contribution. This helps keep the codebase organized and makes it easier for others to understand your changes.
+
+6. Make Your Changes:
+Make the necessary changes to the codebase based on the contribution type you chose. Follow the coding standards and guidelines established by the project. Write clean, well-documented code and consider adding unit tests for new functionality or modifications.
+
+7. Commit Your Changes:
+Commit your changes to the branch you created. Provide a clear and concise commit message that describes the purpose of the changes. It's good practice to keep each commit focused on a single logical change.
+
+8. Push Your Changes:
+Push your branch with the committed changes to your forked repository on GitHub. This makes your changes accessible for others to review.
+
+9. Submit a Pull Request:
+Open a pull request (PR) from your branch in the forked repository to the main repository. Provide a detailed description of the changes you made, including the problem you solved or the feature you implemented. Mention any relevant issue numbers or related discussions.
+
+10. Engage in Code Review:
+Participate in the code review process by responding to feedback and addressing any requested changes. Collaborate with the project maintainers and other contributors to refine your contribution. Be open to constructive criticism and embrace the opportunity to learn and improve your work.
+
+11. Merge and Close the Pull Request:
+Once your changes have been reviewed and approved by the project maintainers, they will merge your branch into the main repository. At this point, your contribution becomes part of the project. The corresponding issue (if any) can be closed, and your work will be attributed to you.
+
 
 ### Formatting of Pull Requests
 
@@ -34,8 +49,6 @@ FedERA follows standard recommendations of PR formatting. Please find more detai
 FedERA uses GitHub actions to perform all functional and unit tests. Before your contribution can be merged make sure that all your tests are passing. 
 For more information of what fails you can click on the “details” link near the pipeline that failed.
 
-![CI/CD](docs/images/CI_details.png)
- 
 ### Writing the tests
 
 The FedERA team recommend including tests for all new features contributions. Test can be found in the “Tests” directory. 
@@ -47,52 +60,4 @@ FedERA is licensed under the terms in [Apache 2.0 license](https://github.com/ak
 
 ### Sign your work
 
-Please use the sign-off line at the end of the patch. Your signature certifies that you wrote the patch or otherwise have the right to pass it on as an open-source patch. The rules are pretty simple: if you can certify
-the below (from [developercertificate.org](http://developercertificate.org/)):
-
-```
-Developer Certificate of Origin
-Version 1.1
-
-Copyright (C) 2004, 2006 The Linux Foundation and its contributors.
-660 York Street, Suite 102,
-San Francisco, CA 94110 USA
-
-Everyone is permitted to copy and distribute verbatim copies of this
-license document, but changing it is not allowed.
-
-Developer's Certificate of Origin 1.1
-
-By making a contribution to this project, I certify that:
-
-(a) The contribution was created in whole or in part by me and I
-    have the right to submit it under the open source license
-    indicated in the file; or
-
-(b) The contribution is based upon previous work that, to the best
-    of my knowledge, is covered under an appropriate open source
-    license and I have the right under that license to submit that
-    work with modifications, whether created in whole or in part
-    by me, under the same open source license (unless I am
-    permitted to submit under a different license), as indicated
-    in the file; or
-
-(c) The contribution was provided directly to me by some other
-    person who certified (a), (b) or (c) and I have not modified
-    it.
-
-(d) I understand and agree that this project and the contribution
-    are public and that a record of the contribution (including all
-    personal information I submit with it, including my sign-off) is
-    maintained indefinitely and may be redistributed consistent with
-    this project or the open source license(s) involved.
-```
-
-Then you just add a line to every git commit message:
-
-    Signed-off-by: Joe Smith <joe.smith@email.com>
-
-Use your real name (sorry, no pseudonyms or anonymous contributions.)
-
-If you set your `user.name` and `user.email` git configs, you can sign your
-commit automatically with `git commit -s`.
+Please use the sign-off line at the end of the patch. Your signature certifies that you wrote the patch or otherwise have the right to pass it on as an open-source patch.
