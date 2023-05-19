@@ -33,7 +33,7 @@ $ pip install federa
 
 ## Documentation
 
-Website documentation has been made availbale for `FedERA`. Please visit [Feder Documentation](https://federa.readthedocs.io/en/latest/index.html) for more details.
+Website documentation has been made availbale for `FedERA`. Please visit [FedERA Documentation](https://federa.readthedocs.io/en/latest/index.html) for more details.
 
 1. [Overview](https://federa.readthedocs.io/en/latest/overview.html)
 2. [Installation](https://federa.readthedocs.io/en/latest/installation.html)
