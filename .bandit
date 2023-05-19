@@ -1,0 +1,5 @@
+[bandit]
+targets: federa
+
+[bandit.test]
+severity: MEDIUM,HIGH
