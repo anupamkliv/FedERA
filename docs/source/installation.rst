@@ -13,8 +13,8 @@ Install **lastest version** from GitHub:
 
 .. code-block:: shell-session
 
-   $ git clone git@github.com:feder/feder.git
-   $ cd feder
+   $ git clone https://github.com/anupamkliv/FedERA.git
+   $ cd FedERA
 
 Install dependencies:
 
