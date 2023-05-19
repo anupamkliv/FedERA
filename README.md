@@ -6,7 +6,7 @@
 
 ## Supported Devices
 
-Feder has been extensively tested on and works with the following devices:
+FedERA has been extensively tested on and works with the following devices:
 
 * Intel CPUs
 * Nvidia GPUs
@@ -33,7 +33,7 @@ $ pip install federa
 
 ## Documentation
 
-Website documentation has been made availbale for `FedERA`. Please visit [Feder Documentation](https://federa.readthedocs.io/en/latest/index.html) for more details.
+Website documentation has been made availbale for `FedERA`. Please visit [FedERA Documentation](https://federa.readthedocs.io/en/latest/index.html) for more details.
 
 1. [Overview](https://federa.readthedocs.io/en/latest/overview.html)
 2. [Installation](https://federa.readthedocs.io/en/latest/installation.html)
@@ -123,20 +123,21 @@ FedERA
 │       |   ├── server
 │       |   ├── verification
 │       └── start_server
-├── test
-|   ├── misc
-│   ├── test_algorithms
-|   ├── test_datasets
-│   ├── test_models
-│   ├── test_modules
-│   ├── test_results
-│   └── test_scalability
-└── tutorials
-    ├── Code_Carbon_Tutorial.ipynb
-    └── ...
+└── test
+    ├── misc
+    ├── benchtest
+    |   ├── test_algorithms
+    |   ├── test_datasets
+    |   ├── test_models
+    |   ├── test_modules
+    |   ├── test_results
+    |   └── test_scalability
+    └──unittest
+        └── test_algorithms
+        
 ```
 
-## The framework will be composed of 4 modules, each module building upon the last:
+## The framework is be composed of 4 modules, each module building upon the last:
 
 * **Module 1: Verification module** [docs](https://federa.readthedocs.io/en/latest/overview.html#verification-module)
 * **Module 2: Timeout module** [docs](https://federa.readthedocs.io/en/latest/overview.html#timeout-module)
@@ -148,8 +149,11 @@ FedERA
 Various unit tests are available in the `test` directory. To run any tests, run the following command from the root directory:
 
 ```
-cd test
-python test_algorithms.py
+python -m test.benchtest.test_algorithms
+python -m test.benchtest.test_datasets
+python -m test.benchtest.test_models
+python -m test.benchtest.test_modules
+python -m test.benchtest.test_scalability
 ```
 
 ## Federated Learning Algorithms
@@ -434,16 +438,16 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
   <img width="40%" alt="" src="media/accuracy/Accuracy.png" >
 </div>
 
-## References
+<!-- ## References
 
 <a id="1">[1]</a> Schmidt, V., Goyal, K., Joshi, A., Feld, B., Conell, L., Laskaris, N., Blank, D., Wilson, J., Friedler, S., & Luccioni, S. (2021). CodeCarbon: Estimate and Track Carbon Emissions from Machine Learning Computing. https://doi.org/10.5281/zenodo.4658424
 
-<a id="2">[2]</a>
+<a id="2">[2]</a> -->
 
 ## Contact
 
 Project Investigator: [Prof. ](https://scholar.google.com/citations?user=gF0H9nEAAAAJ&hl=ennjujbj) (abc@edu).
 
-For technical issues related to __Feder__ development, please contact our development team through Github issues or email:
+For technical issues related to __**FedERA**__ development, please contact our development team through Github issues or email:
 
 - [Name Sirname](https://scholar.google.com/citations___): _____@gmail.com

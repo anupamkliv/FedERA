@@ -1,4 +1,4 @@
-from src.client import client_start
+from .src.client import client_start
 import argparse
 
 parser = argparse.ArgumentParser()

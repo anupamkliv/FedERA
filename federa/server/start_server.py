@@ -1,7 +1,7 @@
 import argparse
 
-from src.server import server_start
-from src.server_lib import save_intial_model
+from .src.server import server_start
+from .src.server_lib import save_intial_model
 
 '# the parameters that can be passed while starting the server'
 parser = argparse.ArgumentParser()

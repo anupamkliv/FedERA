@@ -3,3 +3,9 @@ parallel = True
 concurrency = multiprocessing
 
 [report]
+omit = 
+    federa/server/start_server.py
+    federa/client/start_client.py
+    federa/client/client_custom_dataset/*
+    federa/server/server_custom_dataset/*
+    federa/server/src/media/*
