@@ -110,7 +110,7 @@
             "verify": 0,
             "verification_threshold": 0,
             "timeout": null,
-            "resize_size": 32,
+            "resize_size": 224,
             "batch_size": 32,
             "net": "AlexNet",
             "dataset": "CIFAR10",
