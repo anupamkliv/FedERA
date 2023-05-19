@@ -125,12 +125,16 @@ FedERA
 │       └── start_server
 └── test
     ├── misc
-    ├── test_algorithms
-    ├── test_datasets
-    ├── test_models
-    ├── test_modules
-    ├── test_results
-    └── test_scalability
+    ├── benchtest
+    |   ├── test_algorithms
+    |   ├── test_datasets
+    |   ├── test_models
+    |   ├── test_modules
+    |   ├── test_results
+    |   └── test_scalability
+    └──unittest
+        └── test_algorithms
+        
 ```
 
 ## The framework is be composed of 4 modules, each module building upon the last:
@@ -145,7 +149,11 @@ FedERA
 Various unit tests are available in the `test` directory. To run any tests, run the following command from the root directory:
 
 ```
-python -m test/bench/test_algorithms.py
+python -m test.benchtest.test_algorithms
+python -m test.benchtest.test_datasets
+python -m test.benchtest.test_models
+python -m test.benchtest.test_modules
+python -m test.benchtest.test_scalability
 ```
 
 ## Federated Learning Algorithms
