@@ -27,7 +27,7 @@ jobs:
           pip install -r requirements.txt
       - name: Test with pytest and report code coverage
         run: |
-          coverage run --source=federa -p test/unittest/test_algorithms.py
+          coverage run -m --source=federa -p test.unittest.test_algorithms
           coverage combine
           
         continue-on-error: true
