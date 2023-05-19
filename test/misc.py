@@ -6,7 +6,7 @@ import json
 from torch.multiprocessing import Process
 from torch import multiprocessing
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from federa.server.src.server import server_start
 from federa.client.src.client import client_start
 
@@ -15,8 +15,8 @@ def get_config(action, action2, config_path=""):
     Get the configuration file as json from it 
     """
     
-    root_path = os.path.dirname(
-        os.path.dirname(os.path.realpath(__file__)))
+    root_path = os.path.dirname(os.path.dirname(
+        os.path.dirname(os.path.realpath(__file__))))
     config_path = os.path.join(root_path, 'configs')
     action = action + '.json'
     with open(os.path.join(config_path, action), encoding='UTF-8') as f1:
@@ -30,7 +30,7 @@ def execute(process):
     os.system(f'{process}')
 
     
-def tester(config , no_of_clients, late=None):
+def tester(configs , no_of_clients, late=None):
     """
     Return the tester to each test algorithm.
     Late is introduced for intermediate connection
@@ -39,18 +39,18 @@ def tester(config , no_of_clients, late=None):
     multiprocessing.set_start_method('spawn', force=True)
     if late:
         no_of_clients -= 1
-    server = Process(target=server_start, args=(config['server'],))
+    server = Process(target=server_start, args=(configs['server'],))
     clients = []
     server.start()
     time.sleep(5)
     for i in range(no_of_clients):
-        client = Process(target=client_start, args=(config['client'],))
+        client = Process(target=client_start, args=(configs['client'],))
         clients.append(client)
         client.start()
         time.sleep(2)
     if late:
         time.sleep(3)
-        client = Process(target=client_start, args=(config['client'],))
+        client = Process(target=client_start, args=(configs['client'],))
         clients.append(client)
         client.start()
     clients_list = list(range(len(clients)))
