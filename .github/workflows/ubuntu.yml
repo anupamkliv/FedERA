@@ -23,5 +23,4 @@ jobs:
       run: |
         pip install torch==1.13.1
         pip install torchvision==0.14.1
-        cd test
-        python test_algorithms.py
+        python -m test.unittest.test_algorithms

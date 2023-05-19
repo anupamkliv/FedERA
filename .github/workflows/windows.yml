@@ -42,5 +42,4 @@ jobs:
           pip install -r requirements.txt
       - name: Test TaskRunner API
         run: |
-          cd test
-          python test_algorithms.py
+          python -m test.unittest.test_algorithms
