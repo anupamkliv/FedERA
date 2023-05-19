@@ -1,7 +1,7 @@
 import unittest
 import os
 import sys
-from test.misc import get_config, tester
+from ..misc import get_config, tester
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from federa.server.src.server_lib import save_intial_model
 
