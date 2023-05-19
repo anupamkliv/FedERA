@@ -11,8 +11,7 @@ The server is started by running the following command in the root directory of 
 
 .. code-block:: console
 
-    cd server
-    python start_server.py
+    python -m federa.server.start_server
 
 Arguments that can be passed to the server are:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,8 +41,7 @@ The clients are started by running the following command in the root directory o
 
 .. code-block:: console
 
-    cd client
-    python start_client.py
+    python federa.client.start_client
 
 Arguments that can be passed to the clients are:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,3 +49,5 @@ Arguments that can be passed to the clients are:
 .. code-block:: console
 
     --device cuda
+    --server_ip localhost:8214
+    
