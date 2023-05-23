@@ -88,12 +88,11 @@ Pull Request Checklist
         └── test
             ├── misc
             ├── benchtest
-            |   ├── test_algorithms
-            |   ├── test_datasets
-            |   ├── test_models
-            |   ├── test_modules
             |   ├── test_results
             |   └── test_scalability
             └──unittest
-                └── test_algorithms
+                ├── test_algorithms
+                ├── test_datasets
+                ├── test_models
+                └── test_modules
                 
