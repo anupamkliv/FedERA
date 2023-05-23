@@ -84,6 +84,9 @@ python -m federa.client.start_client \
 | dataset    | specifies dataset name                                      | FashionMNIST |
 | niid       | specifies data distribution among clients                   | 1       |
 | carbon     | specifies if carbon emissions tracked at client side        | 0       |
+| encryption | specifies whether to use ssl encryption or not              | 0       |
+| server_key   | specifies path to server key certificate                  | server-key.pem|
+| server_cert  | specifies path to server certificate                      | server.pem| 
 
 ### Client
 
@@ -91,6 +94,8 @@ python -m federa.client.start_client \
 | ---------- | ------------------------------------------------------------ | ------- |
 | server_ip  | specifies server IP address                                 | localhost:8214 |
 | device     | specifies device                                            | cpu     |
+| encryption | specifies whether to use ssl encryption or not              | 0       |
+| ca         | specifies path to CA certificate                             | ca.pem|
 
 ## Architecture
 Files architecture of `FedERA`. These contents may be helpful for users to understand our repo.
