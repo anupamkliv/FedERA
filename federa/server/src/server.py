@@ -5,6 +5,7 @@ from .verification import verify
 from .server_evaluate import server_eval
 
 import grpc
+from grpc import ssl_server_credentials
 from . import ClientConnection_pb2_grpc
 from concurrent import futures
 
@@ -139,7 +140,18 @@ def server_start(configurations):
     channel_opt = [('grpc.max_send_message_length', -1), ('grpc.max_receive_message_length', -1)]
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10), options=channel_opt)
     ClientConnection_pb2_grpc.add_ClientConnectionServicer_to_server( client_connection_servicer, server )
-    server.add_insecure_port('localhost:8214')
+
+    if configurations['encryption']==1:
+        # Load the server's private key and certificate
+        keyfile = configurations['server_key']
+        certfile = configurations['server_cert']
+        private_key = bytes(open(keyfile).read(), 'utf-8')
+        certificate_chain = bytes(open(certfile).read(), 'utf-8')
+        # Create SSL/TLS credentials object
+        server_credentials = ssl_server_credentials([(private_key, certificate_chain)])
+        server.add_secure_port('localhost:8214', server_credentials)
+    else:
+        server.add_insecure_port('localhost:8214')
     server.start()
 
     server_runner_thread = threading.Thread(target = server_runner, args = (client_manager, configurations, ))
