@@ -34,6 +34,9 @@ parser.add_argument('--dataset', type = str, default= 'FashionMNIST',
 parser.add_argument('--niid', type = int, default= 1, help= 'value should be [1, 5]')
 parser.add_argument('--carbon', type = int, default= 0,
                      help= '1 enable carbon emission at client')
+parser.add_argument('--encryption', type = int, default= 0, help= '1 enables ssl encryption')
+parser.add_argument('--server_key', type = str, default= 'server-key.pem', help= 'path to server key')
+parser.add_argument('--server_cert', type = str, default= 'server.pem', help= 'path to server certificate')
 args = parser.parse_args()
                     
                     
@@ -54,6 +57,9 @@ configurations = {
     "dataset": args.dataset,
     "niid": args.niid,
     "carbon":args.carbon,
+    "encryption": args.encryption,
+    "server_key": args.server_key,
+    "server_cert": args.server_cert
 }
 
                     
