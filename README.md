@@ -66,6 +66,19 @@ python -m federa.client.start_client \
  --device cpu \
 ```
 
+## Using Docker
+
+Create a docker image
+```
+docker build -t federa .
+```
+
+Run the docker image
+
+```
+docker run federa
+```
+
 ## Arguments to the clients and server
 
 ### Server
