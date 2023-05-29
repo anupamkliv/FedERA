@@ -10,7 +10,7 @@ from .client_lib import train, evaluate, set_parameters
 
 def client_start(config):
     keep_going = True
-    wait_time = 0
+    wait_time = config["wait_time"]
     ip_address = config["ip_address"]
     device = torch.device(config["device"])
     #device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
