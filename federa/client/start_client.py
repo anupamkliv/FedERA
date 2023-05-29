@@ -11,6 +11,7 @@ args = parser.parse_args()
 
 configs = {
     "ip_address": args.ip,
+    "wait_time": 10,
     "device": args.device,
     "encryption": args.encryption,
     "ca": args.ca,
