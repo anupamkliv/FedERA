@@ -476,7 +476,7 @@ For technical issues related to __**FedERA**__ development, please contact our d
 
 For technical issues related to __**FedERA**__ development, please contact our development team through Github issues or email:
 
-**Principal Investigators**
+**Principal Investigator**
 
 
 
@@ -488,25 +488,25 @@ email: debdoot@ee.iitkgp.ac.in,
 
 **Contributor**
 
-<a href="https://in.linkedin.com/in/anupam-borthakur-b85000185/">Anupam Borthakur</a>, </br>
+<a href="https://in.linkedin.com/in/anupam-borthakur-b85000185/">Anupam Borthakur</a> </br>
 Centre of Excellence in Artificial Intelligence, </br>
 Indian Institute of Technology Kharagpur </br>
 email: anupamborthakur@kgpian.iitkgp.ac.in </br>
 Github username: anupam-kliv
 
-<a href="https://www.linkedin.com/in/asimmanna17/">Asim Manna</a>, </br>
+<a href="https://www.linkedin.com/in/asimmanna17/">Asim Manna</a> </br>
 Centre of Excellence in Artificial Intelligence, </br>
 Indian Institute of Technology Kharagpur </br>
 email: asimmanna17@kgpian.iitkgp.ac.in </br> 
 Github username: asimmanna17
 
 
-<a href="https://github.com/Rakshith2597"> Aditya Kasliwal</a>,</br>
+<a href="https://github.com/Rakshith2597"> Aditya Kasliwal</a></br>
 Manipal Institute of Technology</br>
 email: kasliwaladitya17@gmail.com </br>
 Github username: Kasliwal17
 
-<a href="https://www.linkedin.com/in/asimmanna17/">Dipayan Dewan</a>, </br>
+<a href="https://www.linkedin.com/in/asimmanna17/">Dipayan Dewan</a> </br>
 Centre of Excellence in Artificial Intelligence, </br>
 Indian Institute of Technology Kharagpur </br>
 email: diipayan92@kgpian.iitkgp.ac.in </br>
