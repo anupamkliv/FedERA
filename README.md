@@ -459,7 +459,14 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
 <div align="center">
   <img width="40%" alt="" src="media/accuracy/Accuracy.png" >
 </div>
+Contributor
 
+The codes/model was contributed to the OpenVINO project by
+
+Asim Manna,
+Centre of Excellence in Artificial Intelligence,
+Indian Institute of Technology Kharagpur
+email: asimmanna17@kgpian.iitkgp.ac.in 
 <!-- ## References
 
 <a id="1">[1]</a> Schmidt, V., Goyal, K., Joshi, A., Feld, B., Conell, L., Laskaris, N., Blank, D., Wilson, J., Friedler, S., & Luccioni, S. (2021). CodeCarbon: Estimate and Track Carbon Emissions from Machine Learning Computing. https://doi.org/10.5281/zenodo.4658424
