@@ -116,6 +116,7 @@ def train(train_order_message, device):
         responseDict = response_dict_bytes)
 
     save_model_state(model)
+    plot_emission()
     return train_response_message
 
 #replace current model with the model provided
@@ -134,3 +135,9 @@ def save_model_state(model):
     filepath = f"{save_dir_path}/model_{file_num}.pt"
     state_dict = model.state_dict()
     torch.save(state_dict, filepath)
+    
+#save plot for communication round-wise carbon emmision
+def plot_emission():
+    data = pd.read_csv(f"{save_dir_path}/emissions.csv")
+    plt.plot(np.arange(len(data.index))[1:],data['emissions'][1:])
+    plt.savefig(f"{save_dir_path}/emissions.png")
