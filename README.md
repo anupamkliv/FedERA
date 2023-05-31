@@ -501,13 +501,13 @@ email: asimmanna17@kgpian.iitkgp.ac.in </br>
 Github username: asimmanna17
 
 
-<a href="https://github.com/Rakshith2597"> Aditya Kasliwal</a></br>
+<a href="https://github.com/aditya-kasliwal-982525227"> Aditya Kasliwal</a></br>
 Manipal Institute of Technology</br>
 email: kasliwaladitya17@gmail.com </br>
 Github username: Kasliwal17
 
-<a href="https://www.linkedin.com/in/asimmanna17/">Dipayan Dewan</a> </br>
+<a href="https://www.linkedin.com/in/dipayan-dewan-aabb8a79/">Dipayan Dewan</a> </br>
 Centre of Excellence in Artificial Intelligence, </br>
 Indian Institute of Technology Kharagpur </br>
-email: diipayan92@kgpian.iitkgp.ac.in </br>
+email: diipayan92@kgpian.iitkgp.ac.in </br> 
  
