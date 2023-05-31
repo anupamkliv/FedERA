@@ -10,6 +10,9 @@ from .net_lib import test_model, load_data
 from .net_lib import train_model, train_fedavg, train_scaffold, train_mimelite, train_mime, train_feddyn
 from torch.utils.data import DataLoader
 from .get_data import get_data
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
 
 from .ClientConnection_pb2 import  EvalResponse, TrainResponse
 
@@ -116,7 +119,8 @@ def train(train_order_message, device):
         responseDict = response_dict_bytes)
 
     save_model_state(model)
-    plot_emission()
+    if carbon_tracker==1:
+        plot_emission()
     return train_response_message
 
 #replace current model with the model provided
