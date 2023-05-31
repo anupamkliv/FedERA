@@ -280,7 +280,7 @@ In `FedERA` CodeCarbon[[1]](#1)  package is used to estimate the carbon emission
 ---
 
 ## Performance Evaluation under different Non-IID setting
-
+<!--
 The `accuracy.py`  file has functions defined needed to plot all the graphs show in this section.
 
 ### Accuracy of various FL algorithms available in the framework with a few dataset
@@ -433,7 +433,7 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
     </tbody>
 </table>
 </div>
-
+-->
 ### Plotting the accuracy of some algorithms against different Non-IID distributions
 
 <div align="left">
@@ -459,14 +459,7 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
 <div align="center">
   <img width="40%" alt="" src="media/accuracy/Accuracy.png" >
 </div>
-Contributor
-
-The codes/model was contributed to the OpenVINO project by
-
-Asim Manna,
-Centre of Excellence in Artificial Intelligence,
-Indian Institute of Technology Kharagpur
-email: asimmanna17@kgpian.iitkgp.ac.in 
+ 
 <!-- ## References
 
 <a id="1">[1]</a> Schmidt, V., Goyal, K., Joshi, A., Feld, B., Conell, L., Laskaris, N., Blank, D., Wilson, J., Friedler, S., & Luccioni, S. (2021). CodeCarbon: Estimate and Track Carbon Emissions from Machine Learning Computing. https://doi.org/10.5281/zenodo.4658424
@@ -475,8 +468,46 @@ email: asimmanna17@kgpian.iitkgp.ac.in
 
 ## Contact
 
-Project Investigator: [Prof. ](https://scholar.google.com/citations?user=gF0H9nEAAAAJ&hl=ennjujbj) (abc@edu).
+<!-- Project Investigator: [Prof. ](https://scholar.google.com/citations?user=gF0H9nEAAAAJ&hl=ennjujbj) (abc@edu).
 
 For technical issues related to __**FedERA**__ development, please contact our development team through Github issues or email:
 
-- [Name Sirname](https://scholar.google.com/citations___): _____@gmail.com
+- [Name Sirname](https://scholar.google.com/citations___): _____@gmail.com -->
+
+For technical issues related to __**FedERA**__ development, please contact our development team through Github issues or email:
+
+**Principal Investigators**
+
+
+
+<a href="https://www.linkedin.com/in/debdoot/">Dr Debdoot Sheet</a> </br>
+Department of Electrical Engineering,</br>
+Indian Institute of Technology Kharagpur</br>
+email: debdoot@ee.iitkgp.ac.in, 
+
+
+**Contributor**
+
+<a href="https://in.linkedin.com/in/anupam-borthakur-b85000185/">Anupam Borthakur</a>, </br>
+Centre of Excellence in Artificial Intelligence, </br>
+Indian Institute of Technology Kharagpur </br>
+email: anupamborthakur@kgpian.iitkgp.ac.in </br>
+Github username: anupam-kliv
+
+<a href="https://www.linkedin.com/in/asimmanna17/">Asim Manna</a>, </br>
+Centre of Excellence in Artificial Intelligence, </br>
+Indian Institute of Technology Kharagpur </br>
+email: asimmanna17@kgpian.iitkgp.ac.in </br> 
+Github username: asimmanna17
+
+
+<a href="https://github.com/Rakshith2597"> Aditya Kasliwal</a>,</br>
+Manipal Institute of Technology</br>
+email: kasliwaladitya17@gmail.com </br>
+Github username: Kasliwal17
+
+<a href="https://www.linkedin.com/in/asimmanna17/">Dipayan Dewan</a>, </br>
+Centre of Excellence in Artificial Intelligence, </br>
+Indian Institute of Technology Kharagpur </br>
+email: diipayan92@kgpian.iitkgp.ac.in </br>
+ 
