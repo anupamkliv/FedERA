@@ -509,5 +509,5 @@ Github username: Kasliwal17
 <a href="https://www.linkedin.com/in/dipayan-dewan-aabb8a79/">Dipayan Dewan</a> </br>
 Centre of Excellence in Artificial Intelligence, </br>
 Indian Institute of Technology Kharagpur </br>
-email: diipayan99@kgpian.iitkgp.ac.in </br> 
+email: diipayan93@kgpian.iitkgp.ac.in </br> 
  
