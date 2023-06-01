@@ -143,5 +143,7 @@ def save_model_state(model):
 #save plot for communication round-wise carbon emmision
 def plot_emission():
     data = pd.read_csv(f"{save_dir_path}/emissions.csv")
-    plt.plot(np.arange(len(data.index))[1:],data['emissions'][1:])
+    plt.plot(np.arange(len(data.index)),data['emissions']*1000)
+    plt.xlabel('Communication Rounds')
+    plt.ylabel('Carbon Emmision (gm)')
     plt.savefig(f"{save_dir_path}/emissions.png")
