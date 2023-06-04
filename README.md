@@ -50,7 +50,7 @@ Website documentation has been made availbale for `FedERA`. Please visit [FedERA
 ```
 python -m federa.server.start_server \
  --algorithm fedavg \
- --clients 2 \
+ --clients 1 \
  --rounds 10 \
  --epochs 10 \
  --batch_size 10 \
@@ -440,7 +440,7 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
   <img src="media/accuracy/Al_0.png" width="230" />
   <img src="media/accuracy/Al_1.png" width="230" /> 
   <img src="media/accuracy/Al_3.png" width="230" />
-  <img src="media/accuracy/Al_4.png" width="230" />
+  <!-- <img src="media/accuracy/Al_4.png" width="230" /> -->
 </div>
 
 ### Plotting accuracy on Non-IID distribution with different algorithms
@@ -449,7 +449,7 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
   <img src="media/accuracy/niid_1.png" width="220" />
   <img src="media/accuracy/niid_2.png" width="220" />
   <img src="media/accuracy/niid_3.png" width="220" />
-  <img src="media/accuracy/niid_4.png" width="220" />
+  <!-- <img src="media/accuracy/niid_4.png" width="220" /> -->
 </div>
 <br/>
 
