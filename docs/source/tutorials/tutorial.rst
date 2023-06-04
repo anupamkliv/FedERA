@@ -15,6 +15,7 @@ Tutorials
    models
    data_distribution
    code_carbon
+   encryption
    
    
 .. card:: Running Server and Client (internal)
