@@ -17,11 +17,17 @@
             "dataset": "MNIST",
             "device": "cpu",
             "niid": 2,
-            "carbon": 0
+            "carbon": 0,
+            "encryption": 0,
+            "server_key": null,
+            "server_cert": null
         },
         "client":{
             "ip_address": "localhost:8214",
-            "device":"cpu"
+            "device":"cpu",
+            "wait_time": 10,
+            "encryption": 0,
+            "ca": null
         }
     },
     "4":{
@@ -42,11 +48,17 @@
             "dataset": "MNIST",
             "device": "cpu",
             "niid": 2,
-            "carbon": 0
+            "carbon": 0,
+            "encryption": 0,
+            "server_key": null,
+            "server_cert": null
         },
         "client":{
             "ip_address": "localhost:8214",
-            "device":"cpu"
+            "device":"cpu",
+            "wait_time": 10,
+            "encryption": 0,
+            "ca": null
         }
     },
     "6":{
@@ -67,11 +79,17 @@
             "dataset": "MNIST",
             "device": "cpu",
             "niid": 2,
-            "carbon": 0
+            "carbon": 0,
+            "encryption": 0,
+            "server_key": null,
+            "server_cert": null
         },
         "client":{
             "ip_address": "localhost:8214",
-            "device":"cpu"
+            "device":"cpu",
+            "wait_time": 10,
+            "encryption": 0,
+            "ca": null
         }
     },
     "8":{
@@ -92,11 +110,17 @@
             "dataset": "MNIST",
             "device": "cpu",
             "niid": 2,
-            "carbon": 0
+            "carbon": 0,
+            "encryption": 0,
+            "server_key": null,
+            "server_cert": null
         },
         "client":{
             "ip_address": "localhost:8214",
-            "device":"cpu"
+            "device":"cpu",
+            "wait_time": 10,
+            "encryption": 0,
+            "ca": null
         }
     },
     "10":{
@@ -117,11 +141,17 @@
             "dataset": "MNIST",
             "device": "cpu",
             "niid": 2,
-            "carbon": 0
+            "carbon": 0,
+            "encryption": 0,
+            "server_key": null,
+            "server_cert": null
         },
         "client":{
             "ip_address": "localhost:8214",
-            "device":"cpu"
+            "device":"cpu",
+            "wait_time": 10,
+            "encryption": 0,
+            "ca": null
         }
     },
     "5_rounds":{
@@ -142,11 +172,17 @@
             "dataset": "MNIST",
             "device": "cpu",
             "niid": 2,
-            "carbon": 0
+            "carbon": 0,
+            "encryption": 0,
+            "server_key": null,
+            "server_cert": null
         },
         "client":{
             "ip_address": "localhost:8214",
-            "device":"cpu"
+            "device":"cpu",
+            "wait_time": 10,
+            "encryption": 0,
+            "ca": null
         }
     },
     "10_rounds":{
@@ -167,11 +203,17 @@
             "dataset": "MNIST",
             "device": "cpu",
             "niid": 2,
-            "carbon": 0
+            "carbon": 0,
+            "encryption": 0,
+            "server_key": null,
+            "server_cert": null
         },
         "client":{
             "ip_address": "localhost:8214",
-            "device":"cpu"
+            "device":"cpu",
+            "wait_time": 10,
+            "encryption": 0,
+            "ca": null
         }
     },
     "20_rounds":{
@@ -192,11 +234,17 @@
             "dataset": "MNIST",
             "device": "cpu",
             "niid": 2,
-            "carbon": 0
+            "carbon": 0,
+            "encryption": 0,
+            "server_key": null,
+            "server_cert": null
         },
         "client":{
             "ip_address": "localhost:8214",
-            "device":"cpu"
+            "device":"cpu",
+            "wait_time": 10,
+            "encryption": 0,
+            "ca": null
         }
     }
 }
