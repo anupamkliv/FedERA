@@ -25,9 +25,10 @@ Generate CA Certificate and Config
 
 To generate the CA certificate and configuration, navigate to the `ssl` directory and run the following command:
 
-.. code-block:: shell
-    cd FedERA/ssl
-    cfssl gencert -initca ca-csr.json | cfssljson -bare ca
+.. code-block:: shell-session
+
+    $ cd FedERA/ssl
+    $ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 
 
 This command generates the `ca.pem` and `ca-key.pem` files. The `ca.pem` file is used by both the client and server for mutual verification.
@@ -40,9 +41,10 @@ Server Certificate
 
 To generate the server certificate and key pair, run the following command in the `ssl` directory:
 
-.. code-block:: shell
-    cd FedERA/ssl
-    cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -hostname='127.0.0.1,localhost' server-csr.json | cfssljson -bare server
+.. code-block:: shell-session
+
+    $ cd FedERA/ssl
+    $ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -hostname='127.0.0.1,localhost' server-csr.json | cfssljson -bare server
 
 
 This command creates the server certificate and key pair to be used by the server during TLS/SSL encryption. Note that you can modify the `hostname` parameter to match the name or IP address of the server on your network.
@@ -52,9 +54,10 @@ Client Certificate
 
 To generate the client certificate and key pair, use the following command in the `ssl` directory:
 
-.. code-block:: shell
-    cd FedERA/ssl
-    cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json client-csr.json | cfssljson -bare client
+.. code-block:: shell-session
+
+    $ cd FedERA/ssl
+    $ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json client-csr.json | cfssljson -bare client
 
 
 When generating the client certificate and key pair, a warning message may appear regarding the absence of a "hosts" field. This warning is expected and acceptable since the client certificate is only used for client identification, not server identification.
@@ -67,11 +70,13 @@ In the FedERA framework, the client trusts the certificate authority certificate
 For one-way trust verification (client verifies server identity but not vice versa), the server does not necessarily need to present the CA certificate as part of its certificate chain. The server only needs to present enough of the certificate chain for the client to trace it back to a trusted CA certificate.
 
 In the FedERA framework, the gRPC server can be configured for SSL using the following code snippet:
+----------------------------------------------------------------------------------------------------
 
 On server side
-----------------
+~~~~~~~~~~~~~~
 
 .. code-block:: python
+
     if configurations['encryption']==1:
             # Load the server's private key and certificate
             keyfile = configurations['server_key']
@@ -83,9 +88,10 @@ On server side
             server.add_secure_port('localhost:8214', server_credentials)
 
 On client side
-----------------
+~~~~~~~~~~~~~~
 
 .. code-block:: python
+
     if config["encryption"] == 1:
                 ca_cert = 'ca.pem'
                 root_certs = bytes(open(ca_cert).read(), 'utf-8')
