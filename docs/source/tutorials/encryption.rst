@@ -16,7 +16,7 @@ In the case of FedERA, we establish our own CA and need to inform the client abo
 Generate Certificates
 =====================
 
-For the purpose of this example, we will set up a basic PKI Infrastructure using CloudFlare's CFSSL toolset, specifically the `cfssl` and `cfssljson` tools. You can download these tools from [here](https://pkg.cfssl.org).
+For the purpose of this example, we will set up a basic PKI Infrastructure using CloudFlare's CFSSL toolset, specifically the `cfssl` and `cfssljson` tools. You can download these tools from `here <https://pkg.cfssl.org>`_ .
 
 The `ssl` directory contains configuration files that can be modified, but for demonstration purposes, they can also be used as-is.
 
@@ -65,7 +65,7 @@ When generating the client certificate and key pair, a warning message may appea
 TLS Server Identification and Encryption
 ========================================
 
-In the FedERA framework, the client trusts the certificate authority certificate, which subsequently enables trust in the server certificate. This is similar to how web browsers handle certificates, where pre-installed public certificate authority certificates establish trust.
+In FedERA, the client trusts the certificate authority certificate, which subsequently enables trust in the server certificate. This is similar to how web browsers handle certificates, where pre-installed public certificate authority certificates establish trust.
 
 For one-way trust verification (client verifies server identity but not vice versa), the server does not necessarily need to present the CA certificate as part of its certificate chain. The server only needs to present enough of the certificate chain for the client to trace it back to a trusted CA certificate.
 
@@ -104,4 +104,4 @@ On client side
 
 Acknowledgments
 ===============
-This code and information were developed with the help of the repository [joekottke/python-grpc-ssl](https://github.com/joekottke/python-grpc-ssl), which provided valuable guidance in implementing the encryption functionality.
+This code and information were developed with the help of the repository `jottoekke/python-grpc-ssl <https://github.com/joekottke/python-grpc-ssl>`_, which provided valuable guidance in implementing the encryption functionality.
