@@ -109,10 +109,11 @@ docker run federa
 
 | Argument   | Description                                                  | Default |
 | ---------- | ------------------------------------------------------------ | ------- |
-| server_ip  | specifies server IP address                                 | localhost:8214 |
-| device     | specifies device                                            | cpu     |
-| encryption | specifies whether to use ssl encryption or not              | 0       |
+| server_ip  | specifies server IP address                                  | localhost:8214 |
+| device     | specifies device                                             | cpu     |
+| encryption | specifies whether to use ssl encryption or not               | 0       |
 | ca         | specifies path to CA certificate                             | ca.pem|
+| wait_time  | specifies time to wait before reconnecting to server           | 30      |
 
 ## Architecture
 Files architecture of `FedERA`. These contents may be helpful for users to understand our repo.
