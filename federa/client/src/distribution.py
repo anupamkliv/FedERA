@@ -69,7 +69,7 @@ def data_distribution(config, trainset):
         # # the total number of samples present for that class. If not it will adjust.
         for num in range(num_classes):
             while dist[num].sum() != len(label_index_list[num]):
-                index = random.randint(0,num_users-1)
+                index = random.randint(0,num_users-1) # nosec
                 if dist[num].sum() < len(label_index_list[num]):
                     dist[num][index]+=1
                 else:

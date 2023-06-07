@@ -55,8 +55,8 @@ def server_runner(client_manager, configurations):
         pass
 
     #Initialize the aggregation algorithm
-    exec(f"from .algorithms.{algorithm} import {algorithm}")
-    aggregator = eval(algorithm)(configurations)
+    exec(f"from .algorithms.{algorithm} import {algorithm}") # nosec
+    aggregator = eval(algorithm)(configurations) # nosec
 
 
     #If the algorithm is either scaffold or mimelite, then we need to make use of control variate

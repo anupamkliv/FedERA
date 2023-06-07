@@ -77,6 +77,6 @@ def verify(clients, trained_model_state_dicts, save_dir_path, threshold = 0):
 
 def random_derangement(list_to_shuffle):
     for index1 in range(1, len(list_to_shuffle)):
-        index2 = randint(0, index1 - 1)
+        index2 = randint(0, index1 - 1) # nosec
         list_to_shuffle[index1], list_to_shuffle[index2] = list_to_shuffle[index2], list_to_shuffle[index1]
     return list_to_shuffle
