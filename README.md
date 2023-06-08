@@ -1,9 +1,9 @@
 # Federated Learning Framework
 
 [![Documentation Status](https://readthedocs.org/projects/federa/badge/?version=latest)](https://federa.readthedocs.io/en/latest/?badge=latest)
-[![License](./media/license.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Ubuntu CI status](https://github.com/anupam-kliv/fl_framework_initial/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/anupam-kliv/fl_framework_initial/actions/workflows/ubuntu.yml)
-[![Windows CI status](https://github.com/anupam-kliv/fl_framework_initial/actions/workflows/windows.yml/badge.svg)](https://github.com/anupam-kliv/fl_framework_initial/actions/workflows/windows.yml)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Ubuntu (latest)](https://github.com/anupamkliv/FedERA/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/anupamkliv/FedERA/actions/workflows/ubuntu.yml)
+[![Windows (latest)](https://github.com/anupamkliv/FedERA/actions/workflows/windows.yml/badge.svg)](https://github.com/anupamkliv/FedERA/actions/workflows/windows.yml)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7362/badge)](https://bestpractices.coreinfrastructure.org/projects/7362)
 
 `FedERA` is a highly dynamic and customizable framework that can accommodate many use cases with flexibility by implementing several functionalities over different federated learning algorithms, and essentially creating a plug-and-play architecture to accommodate different use cases.
