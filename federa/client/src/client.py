@@ -19,7 +19,7 @@ def client_start(config):
         #wait for specified time before reconnecting
         time.sleep(wait_time)
         if config["encryption"] == 1:
-            ca_cert = 'ca.pem'
+            ca_cert = config['ca']
             root_certs = bytes(open(ca_cert).read(), 'utf-8')
             credentials = grpc.ssl_channel_credentials(root_certs)
             #create new gRPC channel to the server
