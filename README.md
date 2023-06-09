@@ -4,6 +4,9 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Ubuntu (latest)](https://github.com/anupamkliv/FedERA/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/anupamkliv/FedERA/actions/workflows/ubuntu.yml)
 [![Windows (latest)](https://github.com/anupamkliv/FedERA/actions/workflows/windows.yml/badge.svg)](https://github.com/anupamkliv/FedERA/actions/workflows/windows.yml)
+[![codecov](https://codecov.io/github/Kasliwal17/FedERA/branch/main/graph/badge.svg?token=0U0pz1YIu7)](https://codecov.io/github/Kasliwal17/FedERA)
+[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7362/badge)](https://bestpractices.coreinfrastructure.org/projects/7362)
 
 `FedERA` is a highly dynamic and customizable framework that can accommodate many use cases with flexibility by implementing several functionalities over different federated learning algorithms, and essentially creating a plug-and-play architecture to accommodate different use cases.
@@ -29,11 +32,11 @@ $ cd FedERA
 $ pip install -r requirements.txt
 ```
 
-<!-- - Install the stable version (old version) via pip:
+- Install the stable version (old version) via pip:
 ```
-# assign the version federa==1.1.2
+# assign the version federa==1.0.0
 $ pip install federa
-``` -->
+```
 
 ## Documentation
 
@@ -149,14 +152,13 @@ FedERA
 └── test
     ├── misc
     ├── benchtest
-    |   ├── test_algorithms
-    |   ├── test_datasets
-    |   ├── test_models
-    |   ├── test_modules
     |   ├── test_results
     |   └── test_scalability
     └──unittest
-        └── test_algorithms
+        ├── test_algorithms
+        ├── test_datasets
+        ├── test_models
+        └── test_modules
         
 ```
 
@@ -169,14 +171,13 @@ FedERA
 
 ## Running tests
 
-Various unit tests are available in the `test` directory. To run any tests, run the following command from the root directory:
+Various unit tests and bench tests are available in the `test` directory. To run any tests, run the following command from the root directory:
 
 ```
-python -m test.benchtest.test_algorithms
-python -m test.benchtest.test_datasets
-python -m test.benchtest.test_models
-python -m test.benchtest.test_modules
-python -m test.benchtest.test_scalability
+python -m test.unittest.test_algorithms
+python -m test.unittest.test_datasets
+python -m test.unittest.test_models
+python -m test.unittest.test_modules
 ```
 
 ## Federated Learning Algorithms
@@ -502,7 +503,7 @@ email: asimmanna17@kgpian.iitkgp.ac.in </br>
 Github username: asimmanna17
 
 
-<a href="https://github.com/aditya-kasliwal-982525227"> Aditya Kasliwal</a></br>
+<a href="https://www.linkedin.com/in/aditya-kasliwal-982525227"> Aditya Kasliwal</a></br>
 Manipal Institute of Technology</br>
 email: kasliwaladitya17@gmail.com </br>
 Github username: Kasliwal17
