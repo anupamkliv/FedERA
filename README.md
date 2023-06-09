@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Ubuntu (latest)](https://github.com/anupamkliv/FedERA/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/anupamkliv/FedERA/actions/workflows/ubuntu.yml)
 [![Windows (latest)](https://github.com/anupamkliv/FedERA/actions/workflows/windows.yml/badge.svg)](https://github.com/anupamkliv/FedERA/actions/workflows/windows.yml)
+[![coveralls](https://coveralls.io/repos/github/anupamkliv/FedERA/badge.svg?branch=main)](https://coveralls.io/github/anupamkliv/FedERA?branch=main)
 [![codecov](https://codecov.io/github/Kasliwal17/FedERA/branch/main/graph/badge.svg?token=0U0pz1YIu7)](https://codecov.io/github/Kasliwal17/FedERA)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
