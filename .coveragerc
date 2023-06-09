@@ -1,6 +1,6 @@
 [run]
 parallel = True
-concurrency = multiprocessing
+concurrency = multiprocessing, thread
 
 [report]
 omit = 
