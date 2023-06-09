@@ -45,7 +45,7 @@
             "resize_size": 32,
             "batch_size": 32,
             "net": "LeNet",
-            "dataset": "MNIST",
+            "dataset": "FashionMNIST",
             "device": "cpu",
             "niid": 2,
             "carbon": 0,
