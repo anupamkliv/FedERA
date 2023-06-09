@@ -42,3 +42,6 @@ jobs:
       - name: Run Bandit
         run: |
           bandit -r --ini .bandit
+          
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v2
