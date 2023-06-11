@@ -134,7 +134,7 @@
             "accept_conn_after_FL_begin":0 ,
             "verify": 0,
             "verification_threshold": 0,
-            "timeout": null,
+            "timeout": 30,
             "resize_size": 224,
             "batch_size": 32,
             "net": "AlexNet",
