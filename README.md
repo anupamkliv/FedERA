@@ -254,7 +254,7 @@ Each client has same number of samples, and same distribution for all class samp
 
 ### Custom Dataset Support
 
-We also provide a simple way to add your own dataset to the framework. TThe models employed in this framework were trained using a limited subset of the publicly accessible benchmark dataset MedMNIST v2 [(link)](https://medmnist.com/). We specifically selected four different medical image classes from this dataset, which include breast ultrasound (US), chest X-ray, retinal optical coherence tomography (OCT), and tissue microscopy. Each image within the dataset possesses dimensions of 28x28 pixels.
+We also provide a simple way to add your own dataset to the framework. The models employed in this framework were trained using a limited subset of the publicly accessible benchmark dataset MedMNIST v2 [(link)](https://medmnist.com/). We specifically selected four different medical image classes from this dataset, which include breast ultrasound (US), chest X-ray, retinal optical coherence tomography (OCT), and tissue microscopy. Each image within the dataset possesses dimensions of 28x28 pixels.
 For the framework's implementation, we utilized this custom dataset for both the side server and the client.   Look into [docs](https://federa.readthedocs.io/en/latest/tutorials/dataset.html#adding-support-for-new-datasets) for more details.
 
 ## Models Supported
