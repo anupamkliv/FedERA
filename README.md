@@ -438,7 +438,7 @@ The `accuracy.py`  file has functions defined needed to plot all the graphs show
 
 We also always welcome questions, issue reports, and suggestions via:
 
-* [GitHub Issues](https://github.com/akshatbhandari15/FedERA/issues)
+* [GitHub Issues](https://github.com/anupamkliv/FedERA/issues)
 
 ## References
 
