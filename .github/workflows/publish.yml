@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  DOCKER_HUB_USERNAME: shivadityas
+  DOCKER_HUB_USERNAME: anupamkliv
   DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
 jobs:
@@ -22,12 +22,12 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t shivadityas/federa:latest .
-          docker tag shivadityas/federa:latest shivadityas/federa:${{ github.sha }}
+          docker build -t anupamkliv/federa:latest .
+          docker tag anupamkliv/federa:latest anupamkliv/federa:${{ github.sha }}
 
       - name: Copy README to Docker image
         run: |
-          docker create --name temp_container shivadityas/federa:latest
+          docker create --name temp_container anupamkliv/federa:latest
           docker cp README.md temp_container:/README.md
-          docker commit temp_container shivadityas/federa:latest
+          docker commit temp_container anupamkliv/federa:latest
           docker rm temp_container
