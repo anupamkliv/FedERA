@@ -1,0 +1,33 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_HUB_USERNAME: shivadityas
+  DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        run: docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+
+      - name: Build and tag Docker image
+        run: |
+          docker build -t shivadityas/federa:latest .
+          docker tag shivadityas/federa:latest shivadityas/federa:${{ github.sha }}
+
+      - name: Copy README to Docker image
+        run: |
+          docker create --name temp_container shivadityas/federa:latest
+          docker cp README.md temp_container:/README.md
+          docker commit temp_container shivadityas/federa:latest
+          docker rm temp_container
