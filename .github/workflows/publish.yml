@@ -31,3 +31,8 @@ jobs:
           docker cp README.md temp_container:/README.md
           docker commit temp_container anupamkliv/federa:latest
           docker rm temp_container
+      
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push anupamkliv/federa:latest
+          docker push anupamkliv/federa:${{ github.sha }}
