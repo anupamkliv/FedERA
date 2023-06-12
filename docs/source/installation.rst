@@ -9,17 +9,28 @@ Follow this procedure to prepare the environment and install **FedERA**:
    
  See the `Venv installation guide <https://docs.python.org/3/library/venv.html>`_ for details.
 
-2. Create a new Virtualenv environment for the project.
+2. Create a new environment for the project.
+    A. Using Virtual Environment
+        .. code-block:: console
 
-   .. code-block:: console
+            $ python3 -m venv env
 
-      python3 -m venv venv
+    B. Using conda
+        .. code-block:: console
+
+            $ conda create -n env python=3.9
 
 3. Activate the virtual environment.
 
-   .. code-block:: console
+    A. Virtual Environment
+        .. code-block:: console
 
-      source venv/bin/activate
+            $ source env/bin/activate
+
+    B. Conda Environment
+        .. code-block:: console
+
+            $ conda activate env
 
 4. Install the **FedERA** package.
 
