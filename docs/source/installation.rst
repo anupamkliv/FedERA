@@ -21,23 +21,24 @@ Follow this procedure to prepare the environment and install **FedERA**:
 
       source venv/bin/activate
 
-4. Install the |productName| package.
+4. Install the **FedERA** package.
 
-    A. Install **stable version** with pip:
+    A. Install the **stable version** with pip:
 
-        .. code-block:: shell-session
+        .. code-block:: console
 
             $ pip install feder==$version$
    
-    B. Install **lastest version** from GitHub::
+    B. Install the **latest version** from GitHub:
 
-        #. Clone the **FedERA** repository:
+        1. Clone the **FedERA** repository:
         
             .. code-block:: console
             
                 $ git clone https://github.com/anupamkliv/FedERA.git
                 $ cd FedERA
-        #. Install dependencies:
+
+        2. Install dependencies:
         
             .. code-block:: console
             
@@ -71,7 +72,7 @@ Follow this procedure to build a Docker image of **FedERA**:
 
       .. code-block:: console
    
-         $ docker build -t federa
+         $ docker build -t federa .
 
 4. Run the Docker image of **FedERA**:
 
