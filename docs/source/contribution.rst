@@ -72,19 +72,23 @@ Pull Request Checklist
         │   |   |   ├── net_lib
         │   |   |   ├── net
         │   │   └── start_client
-        │   └── server
-        │       ├── src
-        │       |   ├── algorithms
-        │       |   ├── server_evaluate
-        │       |   ├── client_connection_servicer
-        │       |   ├── client_manager
-        │       |   ├── client_wrapper
-        │       |   ├── ClientConnection_pb2_grpc
-        │       |   ├── ClientConnection_pb2
-        │       |   ├── server_lib
-        │       |   ├── server
-        │       |   ├── verification
-        │       └── start_server
+        │   ├── server
+        │   │   ├── src
+        │   │   |   ├── algorithms
+        │   │   |   ├── server_evaluate
+        │   │   |   ├── client_connection_servicer
+        │   │   |   ├── client_manager
+        │   │   |   ├── client_wrapper
+        │   │   |   ├── ClientConnection_pb2_grpc
+        │   │   |   ├── ClientConnection_pb2
+        │   │   |   ├── server_lib
+        │   │   |   ├── server
+        │   │   |   ├── verification
+        │   │   └── start_server
+        |   └── test
+        |       ├── minitest
+        |       └── misc
+        │        
         └── test
             ├── misc
             ├── benchtest
