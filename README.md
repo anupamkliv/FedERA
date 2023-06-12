@@ -1,5 +1,5 @@
 # Federated Learning Framework
-
+[![PyPI - Python Version](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue)](https://pypi.org/project/federa/)
 [![Documentation Status](https://readthedocs.org/projects/federa/badge/?version=latest)](https://federa.readthedocs.io/en/latest/?badge=latest)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Ubuntu (latest)](https://github.com/anupamkliv/FedERA/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/anupamkliv/FedERA/actions/workflows/ubuntu.yml)
@@ -9,6 +9,7 @@
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7364/badge)](https://bestpractices.coreinfrastructure.org/projects/7364)
+[![Downloads](https://static.pepy.tech/badge/federa)](https://pepy.tech/project/federa)
 
 `FedERA` is a highly dynamic and customizable framework that can accommodate many use cases with flexibility by implementing several functionalities over different federated learning algorithms, and essentially creating a plug-and-play architecture to accommodate different use cases.
 
