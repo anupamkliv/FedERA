@@ -8,7 +8,7 @@
 [![codecov](https://codecov.io/github/Kasliwal17/FedERA/branch/main/graph/badge.svg?token=0U0pz1YIu7)](https://codecov.io/github/Kasliwal17/FedERA)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
-[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7362/badge)](https://bestpractices.coreinfrastructure.org/projects/7362)
+[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7364/badge)](https://bestpractices.coreinfrastructure.org/projects/7364)
 
 `FedERA` is a highly dynamic and customizable framework that can accommodate many use cases with flexibility by implementing several functionalities over different federated learning algorithms, and essentially creating a plug-and-play architecture to accommodate different use cases.
 
