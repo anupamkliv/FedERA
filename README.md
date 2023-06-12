@@ -6,6 +6,7 @@
 [![Windows (latest)](https://github.com/anupamkliv/FedERA/actions/workflows/windows.yml/badge.svg)](https://github.com/anupamkliv/FedERA/actions/workflows/windows.yml)
 [![coveralls](https://coveralls.io/repos/github/anupamkliv/FedERA/badge.svg?branch=main)](https://coveralls.io/github/anupamkliv/FedERA?branch=main)
 [![codecov](https://codecov.io/github/Kasliwal17/FedERA/branch/main/graph/badge.svg?token=0U0pz1YIu7)](https://codecov.io/github/Kasliwal17/FedERA)
+![Docker Pull](https://img.shields.io/docker/pulls/anupamkliv/federa)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7364/badge)](https://bestpractices.coreinfrastructure.org/projects/7364)
