@@ -29,7 +29,7 @@ parser.add_argument('--timeout', type = int, default=None,
 parser.add_argument('--resize_size', type = int, default = 32, help= 'resize dimension')
 parser.add_argument('--batch_size', type = int, default = 32, help= 'batch size')
 parser.add_argument('--net', type = str, default = 'LeNet', help= 'client network')
-parser.add_argument('--dataset', type = str, default= 'FashionMNIST',
+parser.add_argument('--dataset', type = str, default= 'MNIST',
                      help= 'datsset.Use CUSTOME for local dataset')
 parser.add_argument('--niid', type = int, default= 1, help= 'value should be [1, 5]')
 parser.add_argument('--carbon', type = int, default= 0,
