@@ -22,15 +22,15 @@ Contents
    contribution
    reference
 
-Citation
-........
+.. Citation
+.. ........
 
-Please cite **FedERA** in your publications if it helps your research:
+.. Please cite **FedERA** in your publications if it helps your research:
 
-.. code:: latex
+.. .. code:: latex
     
-    @article{
-    }
+..     @article{
+..     }
 
 Contacts
 ........
