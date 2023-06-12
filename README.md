@@ -140,19 +140,23 @@ FedERA
 │   |   |   ├── net_lib
 │   |   |   ├── net
 │   │   └── start_client
-│   └── server
-│       ├── src
-│       |   ├── algorithms
-│       |   ├── server_evaluate
-│       |   ├── client_connection_servicer
-│       |   ├── client_manager
-│       |   ├── client_wrapper
-│       |   ├── ClientConnection_pb2_grpc
-│       |   ├── ClientConnection_pb2
-│       |   ├── server_lib
-│       |   ├── server
-│       |   ├── verification
-│       └── start_server
+│   ├── server
+│   │   ├── src
+│   │   |   ├── algorithms
+│   │   |   ├── server_evaluate
+│   │   |   ├── client_connection_servicer
+│   │   |   ├── client_manager
+│   │   |   ├── client_wrapper
+│   │   |   ├── ClientConnection_pb2_grpc
+│   │   |   ├── ClientConnection_pb2
+│   │   |   ├── server_lib
+│   │   |   ├── server
+│   │   |   ├── verification
+│   │   └── start_server
+|   └── test
+|       ├── minitest
+|       └── misc
+│        
 └── test
     ├── misc
     ├── benchtest
@@ -264,10 +268,10 @@ For the framework's implementation, we utilized this custom dataset for both the
 
 `FedERA` has support for the following Deep Learning models, which are loaded from `torchvision.models`:
 
-* LeNet
-* ResNet18
-* ResNet50
-* VGG16
+* LeNet-5
+* ResNet-18
+* ResNet-50
+* VGG-16
 * AlexNet
 
 ### Custom Model Support
