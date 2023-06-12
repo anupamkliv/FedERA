@@ -3,6 +3,9 @@
 Installation 
 ============
 
+Install the package
+-------------------
+
 Follow this procedure to prepare the environment and install **FedERA**:
 
 1. Install a Python 3.8 (>=3.6, <=3.9) virtual environment using venv.
@@ -56,7 +59,7 @@ Follow this procedure to prepare the environment and install **FedERA**:
                 $ pip install -r requirements.txt
 
 FedERA with Docker
-==================
+------------------
 
 Follow this procedure to build a Docker image of **FedERA**:
 
