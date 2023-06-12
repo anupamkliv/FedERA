@@ -93,9 +93,9 @@ python -m federa.client.start_client \
 | Argument   | Description                                                  | Default |
 | ---------- | ------------------------------------------------------------ | ------- |
 | algorithm  | specifies the aggregation algorithm                          | fedavg  |
-| clients    | specifies number of clients selected per round              | 2       |
+| clients    | specifies number of clients selected per round              | 1       |
 | fraction   | specifies fraction of clients selected                      | 1       |
-| rounds     | specifies total number of rounds                            | 2       |
+| rounds     | specifies total number of rounds                            | 1       |
 | model_path | specifies initial server model path                         | initial_model.pt |
 | epochs     | specifies client epochs per round                           | 1       |
 | accept_conn| determines if connections accepted after FL begins          | 1       |
@@ -105,7 +105,7 @@ python -m federa.client.start_client \
 | resize_size| specifies dataset resize dimension                          | 32      |
 | batch_size | specifies dataset batch size                                | 32      |
 | net        | specifies network architecture                              | LeNet   |
-| dataset    | specifies dataset name                                      | FashionMNIST |
+| dataset    | specifies dataset name                                      | MNIST |
 | niid       | specifies data distribution among clients                   | 1       |
 | carbon     | specifies if carbon emissions tracked at client side        | 0       |
 | encryption | specifies whether to use ssl encryption or not              | 0       |
