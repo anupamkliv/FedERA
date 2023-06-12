@@ -17,7 +17,7 @@ Arguments that can be passed to the server are:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. list-table:: Configuration Options
+.. list-table:: Server Configuration Options
    :widths: 25 45 20
    :header-rows: 1
    
@@ -95,7 +95,7 @@ The clients are started by running the following command in the root directory o
 Arguments that can be passed to the clients are:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. list-table:: Server Configuration Options
+.. list-table:: Client Configuration Options
    :widths: 25 45 20
    :header-rows: 1
    
