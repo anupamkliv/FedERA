@@ -128,30 +128,22 @@ def get_net(config):
         else:
             net = LeNet(in_channels=3, num_classes=100)
     if config["net"] == 'resnet18':
-        if config['dataset'] in ['MNIST', 'FashionMNIST']:
-            net = models.resnet18(num_classes=10)
-        elif config['dataset'] == 'CIFAR10':
+        if config['dataset'] == 'CIFAR10':
             net = models.resnet18(num_classes=10)
         else:
             net = models.resnet18(num_classes=100)
     if config["net"] == 'resnet50':
-        if config['dataset'] in ['MNIST', 'FashionMNIST']:
-            net = models.resnet50(num_classes=10)
-        elif config['dataset'] == 'CIFAR10':
+        if config['dataset'] == 'CIFAR10':
             net = models.resnet50(num_classes=10)
         else:
             net = models.resnet50(num_classes=100)
     if config["net"] == 'vgg16':
-        if config['dataset'] in ['MNIST', 'FashionMNIST']:
-            net = models.vgg16(num_classes=10)
-        elif config['dataset'] == 'CIFAR10':
+        if config['dataset'] == 'CIFAR10':
             net = models.vgg16(num_classes=10)
         else:
             net = models.vgg16(num_classes=100)
     if config['net'] == 'AlexNet':
-        if config['dataset'] in ['MNIST', 'FashionMNIST']:
-            net = models.alexnet(num_classes=10)
-        elif config['dataset'] == 'CIFAR10':
+        if config['dataset'] == 'CIFAR10':
             net = models.alexnet(num_classes=10)
         else:
             net = models.alexnet(num_classes=100)
