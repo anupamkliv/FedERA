@@ -6,4 +6,5 @@ concurrency = multiprocessing, thread
 omit = 
     federa/server/start_server.py
     federa/client/start_client.py
+    federa/test/*
     
