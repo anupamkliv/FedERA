@@ -16,22 +16,71 @@ The server is started by running the following command in the root directory of 
 Arguments that can be passed to the server are:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* --algorithm: This argument specifies the aggregation algorithm to use. The type of this argument is string, and the default value is "fedavg".
-* --clients: This argument specifies the number of clients to select for each communication round. The type of this argument is integer, and the default value is 2.
-* --fraction: This argument specifies the fraction of clients to select from the available pool of clients. The type of this argument is float, and the default value is 1. This argument accepts values between 0 and 1 inclusive.
-* --rounds: This argument specifies the total number of communication rounds to perform. The type of this argument is integer, and the default value is 2.
-* --model_path: This argument specifies the path of the initial server model's state dictionary. The default value is "initial_model.pt".
-* --epochs: This argument specifies the number of epochs each client should perform in each communication round. The type of this argument is integer, and the default value is 1.
-* --accept_conn: This argument determines whether connections will be accepted even after FL has begun. The type of this argument is integer, and the default value is 1 (meaning that connections will be accepted).
-* --verify: This argument specifies whether the verification module should be run before each communication round. The type of this argument is integer, and the default value is 0 (meaning that verification is disabled).
-* --threshold: This argument specifies the minimum score that clients must have in a verification round (if verification is enabled). The type of this argument is float, and the default value is 0. This argument accepts values between 0 and 1 inclusive.
-* --timeout: This argument specifies the time limit that each client has when training during each communication round. The type of this argument is integer, and the default value is None (meaning that there is no time limit).
-* --resize_size: This argument specifies the resize dimension for the dataset. The type of this argument is integer, and the default value is 32.
-* --batch_size: This argument specifies the batch size for the dataset. The type of this argument is integer, and the default value is 32.
-* --net: This argument specifies the network architecture to use. The type of this argument is string, and the default value is "LeNet".
-* --dataset: This argument specifies the name of the dataset to use. The type of this argument is string, and the default value is "FashionMNIST". If the value of this argument is "CUSTOM", the algorithm will use a local dataset.
-* --niid: This argument specifies the type of data distribution among clients. The type of this argument is integer, and the default value is 1. The value of this argument should be either 1 or 5.
-* --carbon: This argument specifies whether carbon emissions need to be tracked at the client side. The type of this argument is integer, and the default value is 0 (meaning that carbon emissions will not be tracked).
+
+.. list-table:: Configuration Options
+   :widths: 25 45 20
+   :header-rows: 1
+   
+   * - Argument
+     - Description
+     - Default
+   * - ``algorithm``
+     - specifies the aggregation algorithm
+     - ``fedavg``
+   * - ``clients``
+     - specifies number of clients selected per round
+     - ``2``
+   * - ``fraction``
+     - specifies fraction of clients selected
+     - ``1``
+   * - ``rounds``
+     - specifies total number of rounds
+     - ``2``
+   * - ``model_path``
+     - specifies initial server model path
+     - ``initial_model.pt``
+   * - ``epochs``
+     - specifies client epochs per round
+     - ``1``
+   * - ``accept_conn``
+     - determines if connections accepted after FL begins
+     - ``1``
+   * - ``verify``
+     - specifies if verification module runs before rounds
+     - ``0``
+   * - ``threshold``
+     - specifies minimum verification score
+     - ``0``
+   * - ``timeout``
+     - specifies client training time limit per round
+     - ``None``
+   * - ``resize_size``
+     - specifies dataset resize dimension
+     - ``32``
+   * - ``batch_size``
+     - specifies dataset batch size
+     - ``32``
+   * - ``net``
+     - specifies network architecture
+     - ``LeNet``
+   * - ``dataset``
+     - specifies dataset name
+     - ``FashionMNIST``
+   * - ``niid``
+     - specifies data distribution among clients
+     - ``1``
+   * - ``carbon``
+     - specifies if carbon emissions tracked at client side
+     - ``0``
+   * - ``encryption``
+     - specifies whether to use SSL encryption or not
+     - ``0``
+   * - ``server_key``
+     - specifies path to server key certificate
+     - ``server-key.pem``
+   * - ``server_cert``
+     - specifies path to server certificate
+     - ``server.pem``
 
 
 Starting the Clients
@@ -46,8 +95,26 @@ The clients are started by running the following command in the root directory o
 Arguments that can be passed to the clients are:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: console
-
-    --device cuda
-    --server_ip localhost:8214
+.. list-table:: Server Configuration Options
+   :widths: 25 45 20
+   :header-rows: 1
+   
+   * - Argument
+     - Description
+     - Default
+   * - ``server_ip``
+     - specifies server IP address
+     - ``localhost:8214``
+   * - ``device``
+     - specifies device
+     - ``cpu``
+   * - ``encryption``
+     - specifies whether to use SSL encryption or not
+     - ``0``
+   * - ``ca``
+     - specifies path to CA certificate
+     - ``ca.pem``
+   * - ``wait_time``
+     - specifies time to wait before reconnecting to the server
+     - ``30``
     
