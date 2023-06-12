@@ -4,7 +4,7 @@
 Tutorials
 *********
 
-**FedERA** allows you to do federated learning in real time on various supported edge devices, including intel cpus, nvidia gpus, raspberry pi, nvidia jetson. **FedERA** provides modular tools and standard algorithms to simplify federated learning implementation in real time using gRPC framework.
+**FedERA** allows you to do federated learning in real time on various supported edge devices, including Intel CPUs, Nvidia GPUs, Nvidia Jetson, Raspberry Pi, Intel NUC. **FedERA** provides modular tools and standard algorithms to simplify federated learning implementation in real time using gRPC framework.
 
 .. card:: Running Server and Client 
     :link: running
