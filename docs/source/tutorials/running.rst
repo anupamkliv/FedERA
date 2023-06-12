@@ -29,13 +29,13 @@ Arguments that can be passed to the server are:
      - ``fedavg``
    * - ``clients``
      - specifies number of clients selected per round
-     - ``2``
+     - ``1``
    * - ``fraction``
      - specifies fraction of clients selected
      - ``1``
    * - ``rounds``
      - specifies total number of rounds
-     - ``2``
+     - ``1``
    * - ``model_path``
      - specifies initial server model path
      - ``initial_model.pt``
@@ -65,7 +65,7 @@ Arguments that can be passed to the server are:
      - ``LeNet``
    * - ``dataset``
      - specifies dataset name
-     - ``FashionMNIST``
+     - ``MNIST``
    * - ``niid``
      - specifies data distribution among clients
      - ``1``
