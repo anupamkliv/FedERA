@@ -11,7 +11,6 @@ from torch.utils.data import DataLoader
 
 
 from .data_utils import distributionDataloader
-from .distribution import data_distribution
 from .get_data import  get_data
 # DEVICE = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
 # #device id  of this should be same in client_lib device
@@ -20,10 +19,7 @@ def load_data(config):
     trainset, testset = get_data(config)
     # Data distribution for non-custom datasets
     if config['dataset'] != 'CUSTOM':
-        data_distribution(config, trainset)
-        data_path = os.path.join(os.getcwd(), 'Distribution/', config['dataset'],
-                                 'data_split_niid_'+ str(config['niid'])+'.pt')
-        datasets = distributionDataloader(config,  trainset, data_path)
+        datasets = distributionDataloader(config,  trainset, config['datapoints'], config['client_idx'])
         trainloader = DataLoader(datasets, batch_size= config['batch_size'], shuffle=True)
         testloader = DataLoader(testset, batch_size=config['batch_size'])
         num_examples = {"trainset": len(datasets), "testset": len(testset)}
@@ -130,7 +126,8 @@ def train_fedavg(net, trainloader, epochs, device, deadline=None):
 
     # Return the trained model
     return net
-def train_feddyn(net, trainloader, epochs, device, deadline=None):
+
+def train_feddyn(net, trainloader, epochs, device, deadline=None, prev_grads=None):
     """
     Trains a given neural network using the FedDyn algorithm.
     Args:
@@ -143,9 +140,10 @@ def train_feddyn(net, trainloader, epochs, device, deadline=None):
     A trained PyTorch neural network model
     """
     x = deepcopy(net)
-    prev_grads = None
-    if os.path.isfile("client_checkpoints/prev_grads.pt"):
-        prev_grads = torch.load("client_checkpoints/prev_grads.pt", map_location=device)
+    # prev_grads = None
+
+    if prev_grads is not None:
+        prev_grads = prev_grads.to(device)
     else:
         for param in net.parameters():
             if not isinstance(prev_grads, torch.Tensor):
@@ -156,8 +154,11 @@ def train_feddyn(net, trainloader, epochs, device, deadline=None):
                 prev_grads.to(device)
 
     criterion = torch.nn.CrossEntropyLoss()
-    lr = 0.001
+   
+    lr = 0.1
     alpha = 0.01
+
+    optimizer = torch.optim.SGD(net.parameters(), lr=lr)
     for _ in tqdm(range(epochs)):
         inputs,labels = next(iter(trainloader))
         inputs, labels = inputs.float().to(device), labels.long().to(device)
@@ -181,11 +182,10 @@ def train_feddyn(net, trainloader, epochs, device, deadline=None):
             quad_penalty += torch.nn.functional.mse_loss(y.data, z.data, reduction='sum')
 
         loss += (alpha/2) * quad_penalty
-
-        gradients = torch.autograd.grad(loss,net.parameters())
-
-        for param, grad in zip(net.parameters(),gradients):
-            param.data -= lr * grad.data
+        optimizer.zero_grad()
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_(parameters=net.parameters(), max_norm=1) # Clip gradients
+        optimizer.step()
 
         if deadline:
             current_time = time.time()
@@ -203,8 +203,7 @@ def train_feddyn(net, trainloader, epochs, device, deadline=None):
 
     #Update prev_grads using delta which is scaled by alpha
     prev_grads = torch.sub(prev_grads, delta, alpha = alpha)
-    torch.save(prev_grads, "client_checkpoints/prev_grads.pt")
-    return net
+    return net, prev_grads
 
 def train_mimelite(net, state, trainloader, epochs, device, deadline=None):
     """
