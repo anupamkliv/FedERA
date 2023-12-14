@@ -3,6 +3,8 @@ from .client_connection_servicer import ClientConnectionServicer
 
 from .verification import verify
 from .server_evaluate import server_eval
+from .distribution import data_distribution
+from .server_lib import get_data
 
 import grpc
 from grpc import ssl_server_credentials
@@ -73,10 +75,12 @@ def server_runner(client_manager, configurations):
         control_variate2 = None
 
     #run FL for given rounds
+    _, trainset = get_data(configurations)
+    datapoints = data_distribution(configurations, trainset, client_manager.num_connected_clients())
     client_manager.accepting_connections = accept_conn_after_FL_begin
     config_dict = {"epochs": epochs, "timeout": timeout, "algorithm":algorithm, "message":"train",
                    "dataset":dataset, "net":net, "resize_size":resize_size, "batch_size":batch_size,
-                   "niid": niid, "carbon-tracker":carbon}
+                   "niid": niid, "carbon-tracker":carbon, "datapoints":datapoints}
     for round in range(1, communRound + 1):
         clients = client_manager.random_select(client_manager.num_connected_clients(), fraction_of_clients)
 
@@ -96,20 +100,25 @@ def server_runner(client_manager, configurations):
 
         if verification:
             print("Performing verification round...")
-            selected_state_dicts = verify(clients,
-                        trained_model_state_dicts, save_dir_path, threshold=verification_threshold)
+            if algorithm in ('fedavg','feddyn','mime','mimelite'):
+                selected_state_dicts, selected_control_variates = verify(clients,
+                        trained_model_state_dicts, save_dir_path, verification_threshold, updated_control_variates)
+            else:
+                selected_state_dicts, selected_control_variates = verify(clients,
+                            trained_model_state_dicts, save_dir_path, verification_threshold, updated_control_variates, server_model_state_dict)
             print(f"\nAggregating {len(selected_state_dicts)}/{len(trained_model_state_dicts)} clients above threshold")
         else:
             selected_state_dicts = trained_model_state_dicts
+            selected_control_variates = updated_control_variates
 
         #aggregate model, save it, then send to some client to evaluate#aggregate model, save it,
         # then send to some client to evaluate
         if control_variate2:
             server_model_state_dict, control_variate, control_variate2 = aggregator.aggregate(server_model_state_dict,
-                                                    control_variate, selected_state_dicts, updated_control_variates)
+                                                    control_variate, selected_state_dicts, selected_control_variates)
         elif control_variate:
             server_model_state_dict, control_variate = aggregator.aggregate(server_model_state_dict,
-                                        control_variate, selected_state_dicts, updated_control_variates)
+                                        control_variate, selected_state_dicts, selected_control_variates)
         else:
             server_model_state_dict = aggregator.aggregate(server_model_state_dict,selected_state_dicts)
 

@@ -21,13 +21,15 @@ fl_timestamp = f"{datetime.now().strftime('%Y-%m-%d %H-%M-%S')}"
 save_dir_path = f"client_checkpoints/{fl_timestamp}"
 os.makedirs(save_dir_path)
 
+prev_grads = None
+
 def evaluate(eval_order_message, device):
     model_parameters_bytes = eval_order_message.modelParameters
     model_parameters = torch.load( BytesIO(model_parameters_bytes), map_location="cpu" )
 
     config_dict_bytes = eval_order_message.configDict
     config_dict = json.loads( config_dict_bytes.decode("utf-8") )
-
+    client_id = config_dict["client_id"]
     state_dict = model_parameters
     print("Evaluation:",config_dict)
     with open("config.json", "r", encoding='utf-8') as jsonfile:
@@ -43,7 +45,7 @@ def evaluate(eval_order_message, device):
 
     eval_loss, eval_accuracy = test_model(model, testloader, device)
 
-    response_dict = {"eval_loss": eval_loss, "eval_accuracy": eval_accuracy}
+    response_dict = {"eval_loss": eval_loss, "eval_accuracy": eval_accuracy, "client_id": client_id}
     response_dict_bytes = json.dumps(response_dict).encode("utf-8")
     eval_response_message = EvalResponse(responseDict = response_dict_bytes)
     return eval_response_message
@@ -83,7 +85,8 @@ def train(train_order_message, device):
     elif config_dict['algorithm'] == 'fedavg':
         model = train_fedavg(model, trainloader, epochs, device, deadline)
     elif config_dict['algorithm'] == 'feddyn':
-        model = train_feddyn(model, trainloader, epochs, device, deadline)
+        global prev_grads
+        model, prev_grads = train_feddyn(model, trainloader, epochs, device, deadline, prev_grads)
     else:
         model = train_model(model, trainloader, epochs, device, deadline)
 
@@ -110,6 +113,11 @@ def train(train_order_message, device):
     data_to_send_bytes = buffer.read()
 
     print("Evaluation")
+
+    if config_dict['algorithm'] not in ('fedavg','feddyn','mime','mimelite'):
+        for key in trained_model_parameters:
+            trained_model_parameters[key] += model_parameters[key].to(device)
+
     train_loss, train_accuracy = test_model(model, testloader, device)
     response_dict = {"train_loss": train_loss, "train_accuracy": train_accuracy}
     response_dict_bytes = json.dumps(response_dict).encode("utf-8")

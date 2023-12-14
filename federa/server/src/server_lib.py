@@ -13,7 +13,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #serverlib and eval_lib should be on the same device
 
 def load_data(config):
-    testset = get_data(config)
+    testset, _ = get_data(config)
     testloader = DataLoader(testset, batch_size=config['batch_size'])
     num_examples = {"testset": len(testset)}
     return testloader, num_examples
@@ -27,26 +27,37 @@ def get_data(config):
         apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
         testset = datasets.MNIST(root='./server_dataset/MNIST',
                                 train=False, download=True, transform=apply_transform)
+        trainset = datasets.MNIST(root='./server_dataset/MNIST',
+                                train=True, download=True, transform=apply_transform)
     if config['dataset'] == 'FashionMNIST':
         apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
         testset = datasets.FashionMNIST(root='./server_dataset/FashionMNIST',
                                         train=False, download=True, transform=apply_transform)
+        trainset = datasets.FashionMNIST(root='./server_dataset/FashionMNIST',
+                                        train=True, download=True, transform=apply_transform)
 
     if config['dataset'] == 'CIFAR10':
         apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
         testset = datasets.CIFAR10(root='./server_dataset/CIFAR10',
                                    train=False, download=True, transform=apply_transform)
+        trainset = datasets.CIFAR10(root='./server_dataset/CIFAR10',
+                                   train=True, download=True, transform=apply_transform)
 
     if config['dataset'] == 'CIFAR100':
         apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
         testset = datasets.CIFAR100(root='./server_dataset/CIFAR100',
                                     train=False, download=True, transform=apply_transform)
+        trainset = datasets.CIFAR100(root='./server_dataset/CIFAR100',
+                                    train=True, download=True, transform=apply_transform)
 
     if config['dataset'] == 'CUSTOM':
         apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
         testset = customDataset(root='./server_custom_dataset/CUSTOM/test', transform=apply_transform)
+        trainset = customDataset(root='./server_custom_dataset/CUSTOM/train', transform=apply_transform)
 
-    return testset
+    return testset, trainset
+
+
 
 class customDataset(data.Dataset):
     def __init__(self, root, transform=None):

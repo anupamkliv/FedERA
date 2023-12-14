@@ -15,6 +15,7 @@ class ClientWrapper:
         self.recieve_buffer = recieve_buffer
         self.client_id = client_id
         self.is_connected = True
+        self.client_idx = None
 
     #orders the connected client to train using the given parameters
     def train(self, model_parameters, control_variate, control_variate2, config_dict):
@@ -31,6 +32,9 @@ class ClientWrapper:
         torch.save(data, buffer)
         buffer.seek(0)
         data_bytes = buffer.read()
+
+        ##add client index to config dict
+        config_dict['client_idx'] = self.client_idx
 
         #convert config_dict to bytes
         config_dict_bytes = json.dumps(config_dict).encode("utf-8")

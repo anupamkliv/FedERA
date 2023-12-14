@@ -2,13 +2,12 @@ import numpy as np
 import torch
 import random
 import os
-def data_distribution(config, trainset):
+def data_distribution(config, trainset, num_users):
     labels = []
     base_dir = os.getcwd()
     storepath = os.path.join(base_dir, 'Distribution/', config['dataset']+'/')
     seed = 10
     random.seed(seed)
-    num_users = 5
 
     #Calculate the number of samples present per class
     trainset_list = list(range(len(trainset)))
@@ -101,5 +100,6 @@ def data_distribution(config, trainset):
             os.makedirs(storepath)
         file_name = 'data_split_niid_'+ str(K)+'.pt'
 
-        torch.save({'datapoints': datapoints, 'histograms': class_histogram,
-                    'class_statitics': class_stats}, storepath + file_name)
+        # torch.save({'datapoints': datapoints, 'histograms': class_histogram,
+        #             'class_statitics': class_stats}, storepath + file_name)
+        return datapoints
