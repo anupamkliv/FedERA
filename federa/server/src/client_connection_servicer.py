@@ -26,6 +26,7 @@ class ClientConnectionServicer( ClientConnection_pb2_grpc.ClientConnectionServic
         if register_result:
             print(f"Client {client_id} connected.")
             client_index = self.client_manager.num_connected_clients() - 1
+            client.client_idx = client_index
 
             try:
                 while True:
