@@ -2,12 +2,21 @@
 from random import randint
 from collections import OrderedDict
 from concurrent import futures
+import copy
 
-def verify(clients, trained_model_state_dicts, save_dir_path, threshold = 0):
+##modify the verify function to consider the updated control variates also
+def verify(clients, trained_model_state_dicts, save_dir_path, threshold = 0, updated_control_variates = None, server_model_state_dict = None):
     verification_dict = OrderedDict()
     config_dict = {"message": "verify"}
+
+    ##if server_model_state_dict is not None then to each trained_model_state_dict, we need to add the server_model_state_dict
+    if server_model_state_dict is not None:
+        for i in range(len(trained_model_state_dicts)):
+            for key in server_model_state_dict.keys():
+                trained_model_state_dicts[i][key] += server_model_state_dict[key]
+            
     for i, client in zip( range(len(clients)), clients):
-        verification_dict[client.client_id] = {"client_wrapper_object": client, "model": trained_model_state_dicts[i]}
+        verification_dict[client.client_id] = {"client_wrapper_object": client, "model": trained_model_state_dicts[i], "control_variates": updated_control_variates[i]}
     client_ids = list(verification_dict.keys())
     client_ids_shuffled = random_derangement(client_ids)
     for i, client_id in zip( range(len(verification_dict)), verification_dict.keys() ):
@@ -15,24 +24,26 @@ def verify(clients, trained_model_state_dicts, save_dir_path, threshold = 0):
 
     with futures.ThreadPoolExecutor(max_workers = 20) as executor:
         result_futures = []
-
         for client_id, client_info in verification_dict.items():
             assigned_client_id = client_info["assigned_client_id"]
             assigned_client = verification_dict[assigned_client_id]["client_wrapper_object"]
             model_to_verify = client_info["model"]
-            result_futures.append(executor.submit(assigned_client.evaluate, model_to_verify, config_dict))
+            config_dict['client_id'] = client_id
+            config_dict_s = copy.deepcopy(config_dict)
+            result_futures.append(executor.submit(assigned_client.evaluate, model_to_verify, config_dict_s))
 
 
         verification_results = [result_future.result() for result_future in futures.as_completed(result_futures)]
 
-        for client_id, index in zip(verification_dict.keys(), range(len(verification_results))):
-            verification_dict[client_id]["score"] = verification_results[index]["eval_accuracy"]
+        for index in range(len(verification_results)):
+            verification_dict[verification_results[index]["client_id"]]["score"] = verification_results[index]["eval_accuracy"]
 
 
-    selected_client_models, ignored_client_models = [], []
+    selected_client_models, ignored_client_models, selected_control_variates = [], [], []
     for client_id, client_info in verification_dict.items():
         if client_info["score"] >= threshold:
             selected_client_models.append(client_info["model"])
+            selected_control_variates.append(client_info["control_variates"])
             client_info["selected"] = True
 
         else:
@@ -71,8 +82,12 @@ def verify(clients, trained_model_state_dicts, save_dir_path, threshold = 0):
     with open(f"{save_dir_path}/verification_ignored_stats.txt", "a", encoding='UTF-8') as file:
         file.write( f"{ignored_info_dict}\n" )
 
+    if server_model_state_dict is not None:
+        for i in range(len(selected_client_models)):
+            for key in server_model_state_dict.keys():
+                selected_client_models[i][key] -= server_model_state_dict[key]
 
-    return selected_client_models
+    return selected_client_models, selected_control_variates
 
 
 def random_derangement(list_to_shuffle):
