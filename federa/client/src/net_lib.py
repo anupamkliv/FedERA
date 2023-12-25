@@ -3,8 +3,8 @@ import time
 from copy import deepcopy
 from math import ceil
 from tqdm import tqdm
-
-
+import torch.nn as nn
+import torch.optim as optim
 import torch
 
 from torch.utils.data import DataLoader
@@ -373,7 +373,132 @@ def train_scaffold(net, server_c, trainloader, epochs, device, deadline=None):
 
     return net, delta_c
 
+def train_sentiment(net, trainloader, epochs, device, deadline=None):
+    
+    X_train_sparse = torch.tensor(trainloader['data'], dtype=torch.float32)
+    y_train_tensor = torch.tensor(trainloader['target'], dtype=torch.float32)
 
+    
+    class SentimentAnalysisModel(nn.Module):
+        def __init__(self, input_dim):
+            super(SentimentAnalysisModel, self).__init__()
+            self.fc1 = nn.Linear(input_dim, 128)
+            self.fc2 = nn.Linear(128, 64)
+            self.fc3 = nn.Linear(64, 1)
+            self.sigmoid = nn.Sigmoid()
+
+        def forward(self, x):
+            x = torch.relu(self.fc1(x))
+            x = torch.relu(self.fc2(x))
+            x = self.fc3(x)
+            x = self.sigmoid(x)
+            return x
+    input_dim = X_train_sparse.shape[1]
+    sentiment_model = SentimentAnalysisModel(input_dim)
+    sentiment_optimizer = optim.Adam(sentiment_model.parameters(), lr=0.001)
+    sentiment_criterion = nn.BCELoss()
+    scheduler = torch.optim.lr_scheduler.StepLR(sentiment_optimizer, step_size=10, gamma=0.5)
+    class GlobalModel(nn.Module):
+        def __init__(self, input_dim):
+            super(GlobalModel, self).__init__()
+            self.fc1 = nn.Linear(input_dim, 128)
+            self.fc2 = nn.Linear(128, 64)
+            self.fc3 = nn.Linear(64, 1)
+            self.sigmoid = nn.Sigmoid()
+
+        def forward(self, x):
+            x = torch.relu(self.fc1(x))
+            x = torch.relu(self.fc2(x))
+            x = self.fc3(x)
+            x = self.sigmoid(x)
+            return x 
+
+
+    sentiment_model = SentimentAnalysisModel(input_dim)
+    sentiment_optimizer = optim.Adam(sentiment_model.parameters(), lr=0.001)
+    scheduler = torch.optim.lr_scheduler.StepLR(sentiment_optimizer, step_size=10, gamma=0.5)
+    input_dim = 15000
+    global_model = GlobalModel(input_dim)
+
+        # Simulate multiple devices (local clients) with local data
+    num_devices = 30
+    local_models = [GlobalModel(input_dim) for _ in range(num_devices)]
+    criterion = nn.BCELoss()
+    optimizer = optim.SGD(global_model.parameters(), lr=0.01)
+    num_epochs_centralized = 50
+
+    for epoch in range(num_epochs_centralized):
+        for device_id in range(num_devices):
+            # Simulate local training on each device
+            local_optimizer = optim.Adam(local_models[device_id].parameters(), lr=0.01)
+            local_data = torch.randn(100, input_dim)  # Simulated local data
+            local_labels = torch.randint(0, 2, (100, 1), dtype=torch.float32)  # Simulated labels
+            for local_epoch in range(10):  # Local training epochs
+                local_optimizer.zero_grad()
+                local_outputs = local_models[device_id](local_data)
+                local_loss = sentiment_criterion(local_outputs, local_labels)
+                local_loss.backward()
+                local_optimizer.step()
+
+        # Send local model parameters (or gradients) to the centralized server
+        global_model_parameters = global_model.state_dict()
+        local_model_parameters = local_models[device_id].state_dict()
+
+        for key in global_model_parameters.keys():
+            global_model_parameters[key] += local_model_parameters[key]
+
+        # Average the global model parameters
+    for key in global_model_parameters.keys():
+        global_model_parameters[key] /= num_devices
+
+        # Update the global model with the averaged parameters
+    global_model.load_state_dict(global_model_parameters)
+    num_communication_rounds = 15
+    for round_num in range(num_communication_rounds):
+        print(f"Communication Round {round_num + 1}/{num_communication_rounds}")
+
+        for device_id in range(num_devices):
+            # Simulate local training on each device
+            local_optimizer = optim.Adam(local_models[device_id].parameters(), lr=0.01)
+            local_data = torch.randn(100, input_dim)  # Simulated local data
+            local_labels = torch.randint(0, 2, (100, 1), dtype=torch.float32)  # Simulated labels
+            for local_epoch in range(10):  # Local training epochs
+                local_optimizer.zero_grad()
+                local_outputs = local_models[device_id](local_data)
+                local_loss = criterion(local_outputs, local_labels)
+                local_loss.backward()
+                local_optimizer.step()
+
+            # Send local model parameters (or gradients) to the centralized server
+            global_model_parameters = global_model.state_dict()
+            local_model_parameters = local_models[device_id].state_dict()
+
+            for key in global_model_parameters.keys():
+                global_model_parameters[key] += local_model_parameters[key]
+
+        # Average the global model parameters
+        for key in global_model_parameters.keys():
+            global_model_parameters[key] /= num_devices
+
+        # Update the global model with the averaged parameters
+        global_model.load_state_dict(global_model_parameters)
+        global_model.eval() 
+        with torch.no_grad(): 
+            correct = 0 
+            total = 0 
+            for device_id in range(num_devices):
+
+        # Simulate testing data on each device
+                test_data = torch.randn(100, input_dim)  # Simulated testing data
+                test_labels = torch.randint(0, 2, (100, 1), dtype=torch.float32)  # Simulated testing labels
+                test_outputs = global_model(test_data)
+                predicted = (test_outputs > 0.5).float()
+                total += test_labels.size(0)
+                correct += (predicted == test_labels).sum().item()
+        accuracy = 100 * correct / total 
+        print(f'Federated Model Accuracy on the test set: {accuracy:.2f}%')
+
+        
 def test_model(net, testloader, device):
     """Evaluate the performance of a model on a test dataset.
 
