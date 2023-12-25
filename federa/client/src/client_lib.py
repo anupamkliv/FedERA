@@ -1,4 +1,4 @@
-import torch
+mport torch
 from io import BytesIO
 import json
 import time
@@ -7,7 +7,7 @@ from datetime import datetime
 from codecarbon import  OfflineEmissionsTracker
 from .net import get_net
 from .net_lib import test_model, load_data
-from .net_lib import train_model, train_fedavg, train_scaffold, train_mimelite, train_mime, train_feddyn
+from .net_lib import train_model, train_fedavg, train_scaffold, train_mimelite, train_mime, train_feddyn, train_sentiment
 from torch.utils.data import DataLoader
 from .get_data import get_data
 import matplotlib.pyplot as plt
@@ -87,6 +87,9 @@ def train(train_order_message, device):
     elif config_dict['algorithm'] == 'feddyn':
         global prev_grads
         model, prev_grads = train_feddyn(model, trainloader, epochs, device, deadline, prev_grads)
+    elif config_dict['algorithm'] == 'fedavg_sentiment':
+        model=train_sentiment(model, trainloader, epochs, device, deadline=None)
+
     else:
         model = train_model(model, trainloader, epochs, device, deadline)
 
