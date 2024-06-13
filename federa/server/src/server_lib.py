@@ -24,34 +24,34 @@ def get_data(config):
     if not os.path.exists(dataset_path):
         os.makedirs(dataset_path)
     if config['dataset'] == 'MNIST':
-        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
+        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.GaussianBlur(kernel_size=(5, 5), sigma=(0.1, 5)), transforms.ToTensor()])
         testset = datasets.MNIST(root='./server_dataset/MNIST',
                                 train=False, download=True, transform=apply_transform)
         trainset = datasets.MNIST(root='./server_dataset/MNIST',
                                 train=True, download=True, transform=apply_transform)
     if config['dataset'] == 'FashionMNIST':
-        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
+        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.GaussianBlur(kernel_size=(5, 5), sigma=(0.1, 5)), transforms.ToTensor()])
         testset = datasets.FashionMNIST(root='./server_dataset/FashionMNIST',
                                         train=False, download=True, transform=apply_transform)
         trainset = datasets.FashionMNIST(root='./server_dataset/FashionMNIST',
                                         train=True, download=True, transform=apply_transform)
 
     if config['dataset'] == 'CIFAR10':
-        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
+        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.GaussianBlur(kernel_size=(5, 5), sigma=(0.1, 5)), transforms.ToTensor()])
         testset = datasets.CIFAR10(root='./server_dataset/CIFAR10',
                                    train=False, download=True, transform=apply_transform)
         trainset = datasets.CIFAR10(root='./server_dataset/CIFAR10',
                                    train=True, download=True, transform=apply_transform)
 
     if config['dataset'] == 'CIFAR100':
-        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
+        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.GaussianBlur(kernel_size=(5, 5), sigma=(0.1, 5)), transforms.ToTensor()])
         testset = datasets.CIFAR100(root='./server_dataset/CIFAR100',
                                     train=False, download=True, transform=apply_transform)
         trainset = datasets.CIFAR100(root='./server_dataset/CIFAR100',
                                     train=True, download=True, transform=apply_transform)
 
     if config['dataset'] == 'CUSTOM':
-        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.ToTensor()])
+        apply_transform = transforms.Compose([transforms.Resize(config['resize_size']), transforms.GaussianBlur(kernel_size=(5, 5), sigma=(0.1, 5)), transforms.ToTensor()])
         testset = customDataset(root='./server_custom_dataset/CUSTOM/test', transform=apply_transform)
         trainset = customDataset(root='./server_custom_dataset/CUSTOM/train', transform=apply_transform)
 
